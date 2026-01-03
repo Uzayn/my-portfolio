@@ -72,7 +72,7 @@ function AccordionItem({
         onClick={onClick}
         className="flex w-full items-center py-4 text-left pr-8"
       >
-        <div className="flex items-center gap-2">
+        <div className="flex w-full md:w-3/4 items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 shrink-0">
             <Image
               src={role.logo}
@@ -83,7 +83,7 @@ function AccordionItem({
               unoptimized
             />
           </div>
-          <div className="flex flex-auto flex-wrap gap-x-2">
+          <div className="flex flex-auto flex-col">
             <div className="flex items-center gap-x-1">
               <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 {role.company}
@@ -92,27 +92,30 @@ function AccordionItem({
                 {role.location}
               </span>
             </div>
-            <div className="w-full flex items-center justify-between">
-              <span className="text-xs text-gray-500 dark:text-gray-400">
+            <div className="flex justify-between w-full">
+              <div className="text-xs text-gray-500 dark:text-gray-400">
                 {role.title}
-              </span>
-              <span
+              </div>
+              <div
                 className="text-xs text-gray-400 dark:text-gray-500"
                 aria-label={`${role.start} until ${role.end.label}`}
               >
                 <time dateTime={role.end.dateTime}>{role.start}</time>{" "}
                 <span aria-hidden="true">—</span>{" "}
                 <time dateTime={role.end.dateTime}>{role.end.label}</time>
-              </span>
+              </div>
             </div>
           </div>
         </div>
       </button>
-      <FaChevronDown
-        className={`absolute top-4 right-4 ml-2 h-4 w-4 text-gray-500 transition-transform ${
+      <button
+        onClick={onClick}
+        className={`absolute top-4 right-4 h-4 w-4 text-gray-500 transition-transform ml-2 ${
           isOpen ? "rotate-180" : ""
         }`}
-      />
+      >
+        <FaChevronDown />
+      </button>
       <div
         className={`overflow-hidden transition-all ${
           isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
