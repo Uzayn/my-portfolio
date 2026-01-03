@@ -7,6 +7,7 @@ import Image from "next/image";
 interface WorkExperience {
   company: string;
   title: string;
+  location: string;
   logo: string;
   start: string;
   end: {
@@ -20,6 +21,7 @@ const workExperience: WorkExperience[] = [
   {
     company: "Bilin",
     title: "Frontend Engineer",
+    location: "Germany",
     logo: "https://picsum.photos/seed/bilin/100/100",
     start: "Aug 2023",
     end: {
@@ -32,6 +34,7 @@ const workExperience: WorkExperience[] = [
   {
     company: "Inspectorama",
     title: "Frontend developer",
+    location: "US",
     logo: "https://picsum.photos/seed/inspectorama/100/100",
     start: "Dec 2022",
     end: {
@@ -43,6 +46,7 @@ const workExperience: WorkExperience[] = [
   {
     company: "Grow",
     title: "Frontend developer",
+    location: "Nigeria",
     logo: "https://picsum.photos/seed/grow/100/100",
     start: "Oct 2022",
     end: {
@@ -63,13 +67,13 @@ function AccordionItem({
   onClick: () => void;
 }) {
   return (
-    <div className="border-b border-zinc-100 last:border-b-0 dark:border-zinc-800">
+    <div className="border-b border-gray-200 dark:border-gray-700 last:border-b-0 relative">
       <button
         onClick={onClick}
-        className="flex w-full items-center justify-between py-4 text-left"
+        className="flex w-full items-center py-4 text-left pr-8"
       >
         <div className="flex items-center gap-4">
-          <div className="relative flex h-10 w-10 flex-none items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
             <Image
               src={role.logo}
               alt={`${role.company} logo`}
@@ -79,49 +83,51 @@ function AccordionItem({
               unoptimized
             />
           </div>
-          <dl className="flex flex-auto flex-wrap gap-x-2">
-            <dt className="sr-only">Company</dt>
-            <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-              {role.company}
-            </dd>
-            <dt className="sr-only">Role</dt>
-            <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-              {role.title}
-            </dd>
-            <dt className="sr-only">Date</dt>
-            <dd
-              className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-              aria-label={`${role.start} until ${role.end.label}`}
-            >
-              <time dateTime={role.end.dateTime}>{role.start}</time>{" "}
-              <span aria-hidden="true">—</span>{" "}
-              <time dateTime={role.end.dateTime}>{role.end.label}</time>
-            </dd>
-          </dl>
+          <div className="flex flex-auto flex-wrap gap-x-2">
+            <div className="flex items-center gap-x-1">
+              <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                {role.company}
+              </span>
+              <span className="text-xs text-gray-400 dark:text-gray-500 font-light">
+                {role.location}
+              </span>
+            </div>
+            <div className="w-full flex items-center justify-between">
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                {role.title}
+              </span>
+              <span
+                className="text-xs text-gray-400 dark:text-gray-500"
+                aria-label={`${role.start} until ${role.end.label}`}
+              >
+                <time dateTime={role.end.dateTime}>{role.start}</time>{" "}
+                <span aria-hidden="true">—</span>{" "}
+                <time dateTime={role.end.dateTime}>{role.end.label}</time>
+              </span>
+            </div>
+          </div>
         </div>
-        <FaChevronDown
-          className={`h-5 w-5 text-zinc-500 transition-transform duration-300 ease-in-out ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
       </button>
+      <FaChevronDown
+        className={`absolute top-4 right-4 ml-2 h-4 w-4 text-gray-500 transition-transform ${
+          isOpen ? "rotate-180" : ""
+        }`}
+      />
       <div
-        className={`grid transition-all duration-300 ease-in-out ${
-          isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        className={`overflow-hidden transition-all ${
+          isOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="overflow-hidden">
-          <div className="pb-4 pt-2">
-            <div className="flex flex-wrap gap-2">
-              {role.details.split(", ").map((tech, index) => (
-                <span
-                  key={index}
-                  className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-sm font-medium text-zinc-800 dark:bg-zinc-700/50 dark:text-zinc-300"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+        <div className="pb-4 pt-2">
+          <div className="flex flex-wrap gap-1">
+            {role.details.split(", ").map((tech, index) => (
+              <span
+                key={index}
+                className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-1.5 py-0.5 rounded"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
       </div>
@@ -138,13 +144,13 @@ export default function Work() {
 
   return (
     <section className="p-4 md:p-8 lg:p-12">
-      <div className="max-w-4xl mx-auto">
-        <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-          <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-            <FaBriefcase className="h-6 w-6 flex-none" />
-            <span className="ml-3">Work</span>
-          </h2>
-          <div className="mt-6 space-y-4">
+      <div className="w-full lg:w-1/2 md:w-3/4">
+        <div className="flex items-center space-x-2 mb-8">
+          <FaBriefcase className="text-sm" />
+          <span>Work</span>
+        </div>
+        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
+          <div className="space-y-4">
             {workExperience.map((role, roleIndex) => (
               <AccordionItem
                 key={roleIndex}
@@ -157,17 +163,13 @@ export default function Work() {
           <a
             href="/Graduate Application - Huzain.pdf"
             download
-            className="group mt-6 w-full inline-flex items-center justify-center rounded-full bg-zinc-50 py-2 px-3 text-sm font-medium text-zinc-900 hover:bg-zinc-100 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50"
+            className="group mt-6 w-full inline-flex items-center justify-center rounded-lg bg-gray-50 py-2 px-3 text-sm font-medium text-gray-900 hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
           >
             Download Resume
-            <FaArrowDown className="ml-1 inline-block h-4 w-4 transition group-hover:text-zinc-600 dark:group-hover:text-zinc-50" />
+            <FaArrowDown className="ml-1 inline-block h-4 w-4 transition group-hover:text-gray-600 dark:group-hover:text-gray-100" />
           </a>
-          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400 text-center">
-            Last updated:{" "}
-            {new Date().toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "long",
-            })}
+          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400 text-center">
+            Last updated: December 2025
           </p>
         </div>
       </div>
