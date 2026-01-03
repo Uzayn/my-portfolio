@@ -73,11 +73,11 @@ function AccordionItem({
         className="flex w-full items-center py-4 text-left pr-8"
       >
         <div className="flex items-center gap-4">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 shrink-0">
             <Image
               src={role.logo}
               alt={`${role.company} logo`}
-              className="h-7 w-7 rounded-full"
+              className="h-7 w-7 rounded-full object-cover"
               width={28}
               height={28}
               unoptimized
