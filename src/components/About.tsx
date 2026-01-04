@@ -37,7 +37,7 @@ export default function About() {
           </div>
 
           {/* Image */}
-          <div className="flex-1 order-2 lg:order-1">
+          <div className="flex-1 order-2 lg:order-1 pl-4">
             <CardStack images={aboutImages} />
           </div>
         </div>

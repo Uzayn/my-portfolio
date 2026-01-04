@@ -1,4 +1,4 @@
-import { FaFolderOpen } from "react-icons/fa6";
+import { FaFolderOpen, FaArrowRight } from "react-icons/fa6";
 import { projects } from "@/types/projects";
 
 export default function Projects() {
@@ -18,50 +18,61 @@ export default function Projects() {
             >
               {/* Project Image */}
               <div className="w-full h-32 bg-gray-200 dark:bg-gray-700">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </a>
               </div>
 
               {/* Project Content */}
-              <div className="p-4">
-                <h3 className="text-base font-semibold mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-3 text-xs">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1 mb-3">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-1.5 py-0.5 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div className="p-4 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-base font-semibold mb-2">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 mb-3 text-xs">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1 mb-3">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-1.5 py-0.5 rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <a
-                  href={project.link}
-                  className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-                >
-                  View Project →
-                </a>
+                <div className="flex justify-end">
+                  <a
+                    href={project.link}
+                    className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center space-x-1"
+                  >
+                    <span>View Project</span>
+                    <FaArrowRight className="text-xs" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="flex justify-center mt-8">
-          <a
-            href="/projects"
-            className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center space-x-1"
-          >
-            <span>See all</span>
-            <span>→</span>
-          </a>
+          <div className="flex justify-center mt-8">
+            <a
+              href="/projects"
+              className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center space-x-1"
+            >
+              <span>See all</span>
+              <FaArrowRight className="text-xs" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
