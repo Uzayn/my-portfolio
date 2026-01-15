@@ -10,7 +10,6 @@ export default function Hero() {
         className="absolute top-1/4 right-0 w-1/2 h-1/2 md:w-1/3 md:h-2/3 opacity-70 dark:opacity-50"
         viewBox="0 0 400 400"
       >
-        {/* Varied dot sizes and positions for organic feel */}
         <circle
           cx="50"
           cy="50"
@@ -95,11 +94,9 @@ export default function Hero() {
           fill="currentColor"
           className="text-gray-300 dark:text-gray-700"
         />
-        {/* Add more circles as needed for density */}
       </svg>
 
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 md:px-12 text-left space-y-8 z-10">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 text-left space-y-6 z-10">
         <h1
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter leading-none"
           style={{
@@ -112,21 +109,20 @@ export default function Hero() {
           Huzain Koleosho
         </h1>
 
-        <p className="text-xl md:text-2xl font-light text-gray-600 dark:text-gray-400">
+        <p className="text-base md:text-2xl font-light text-gray-600 dark:text-gray-400">
           Frontend Engineer
         </p>
 
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0 dark:via-gray-600" />
 
-        <p className="text-lg md:text-xl font-light text-gray-700 dark:text-gray-300 max-w-lg">
+        {/* <p className="text-lg md:text-xl font-light text-gray-700 dark:text-gray-300 max-w-lg">
           I build, this is proof
-        </p>
+        </p> */}
 
-        {/* Bio Placeholder */}
-        <p className="text-base md:text-lg text-gray-500 dark:text-gray-400 max-w-prose">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Passionate
-          about crafting pixel-perfect interfaces and intuitive user
-          experiences. Specializing in React, Next.js, and modern web
+        <p className=" text-gray-500 dark:text-gray-400 max-w-prose font-light">
+          Engineering, developing, commiting & everything in between. <br /> I
+          care about creating cool interfaces and intuitive and engaging user
+          experiences. <br /> Specializing in React, Next.js, and modern web
           technologies to bring ideas to life.
         </p>
       </div>

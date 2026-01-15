@@ -8,7 +8,7 @@ import Navigation from "@/components/Navigation";
 
 export default function Home() {
   return (
-    <main>
+    <main className="overflow-hidden">
       <Navigation />
       <Hero />
       <Work />
