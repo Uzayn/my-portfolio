@@ -11,7 +11,7 @@ export default function About() {
   ];
 
   return (
-    <section className="p-4 md:p-8 lg:p-12">
+    <section id="about" className="p-4 md:p-8 lg:p-12">
       <div className="max-w-6xl">
         <div className="flex items-center space-x-2 mb-8">
           <FaUser className="text-sm" />

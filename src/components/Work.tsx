@@ -146,7 +146,7 @@ export default function Work() {
   };
 
   return (
-    <section className="p-4 md:p-8 lg:p-12">
+    <section id="work" className="p-4 md:p-8 lg:p-12">
       <div className="w-full lg:w-1/2 md:w-3/4">
         <div className="flex items-center space-x-2 mb-8">
           <FaBriefcase className="text-sm" />

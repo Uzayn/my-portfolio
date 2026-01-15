@@ -4,10 +4,12 @@ import Projects from "@/components/Projects";
 import Stack from "@/components/Stack";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Navigation from "@/components/Navigation";
 
 export default function Home() {
   return (
     <main>
+      <Navigation />
       <Hero />
       <Work />
       <Projects />

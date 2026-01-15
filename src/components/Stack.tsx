@@ -37,7 +37,7 @@ export default function Stack() {
   ];
 
   return (
-    <section className="p-4 md:p-8 lg:p-12">
+    <section id="stack" className="p-4 md:p-8 lg:p-12">
       <div className="max-w-6xl">
         <div className="flex items-center space-x-2 mb-12">
           <FaLayerGroup className="text-sm" />
@@ -48,7 +48,7 @@ export default function Stack() {
             const Icon = tech.icon;
             return (
               <div key={index} className="flex items-center space-x-3 p-4">
-                <div className="size-8 flex-shrink-0">
+                <div className="size-8 shrink-0">
                   <Icon className={`w-full h-full ${tech.color}`} />
                 </div>
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
