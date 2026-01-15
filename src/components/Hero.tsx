@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-linear-to-b from-white to-gray-50 dark:from-black dark:to-gray-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden "
     >
       <svg
         className="absolute top-1/4 right-0 w-1/2 h-1/2 md:w-1/3 md:h-2/3 opacity-70 dark:opacity-50"
