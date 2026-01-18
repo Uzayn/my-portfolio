@@ -14,26 +14,23 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              className="relative w-full h-64 overflow-hidden transition-shadow"
             >
-              {/* Project Image */}
-              <div className="w-full h-32 bg-gray-200 dark:bg-gray-700">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full h-full"
-                >
+              {/* Project Image - Positioned top-right with fade */}
+              <div className="absolute top-0 right-0 w-3/4 h-48  overflow-hidden">
+                <div className="relative w-full h-full">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-t-xl border-0"
                   />
-                </a>
+                  {/* Fade overlay at bottom - clipped to avoid intersecting with details */}
+                  <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-white via-white/95 to-transparent dark:from-gray-900 dark:via-gray-900/95" />
+                </div>
               </div>
 
-              {/* Project Content */}
-              <div className="p-4 flex flex-col justify-between">
+              {/* Project Details - Positioned bottom-left */}
+              <div className="absolute bottom-0 left-0 w-3/4 p-4 flex flex-col justify-between">
                 <div>
                   <h3 className="text-base font-semibold mb-2">
                     {project.title}
@@ -51,15 +48,6 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                </div>
-                <div className="flex justify-end">
-                  <a
-                    href={project.link}
-                    className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center space-x-1"
-                  >
-                    <span>View Project</span>
-                    <FaArrowRight className="text-xs" />
-                  </a>
                 </div>
               </div>
             </div>
