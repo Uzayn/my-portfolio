@@ -201,10 +201,10 @@ export default function Work() {
     <section id="work" className="py-12 md:py-16 lg:py-20">
       <div className="max-w-4xl mx-auto px-6 md:px-12 space-y-6">
         <div className="flex items-center space-x-2">
-          <FaBriefcase className="text-base text-gray-700 dark:text-gray-300" />
-          <h2 className="text-xl font-normal tracking-tight text-gray-900 dark:text-gray-100">
-            Work
-          </h2>
+          <div className="flex items-center space-x-2">
+            <FaBriefcase className="text-sm" />
+            <span>Work</span>
+          </div>
         </div>
         {/* <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0 dark:via-gray-600" /> */}
         <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6">
