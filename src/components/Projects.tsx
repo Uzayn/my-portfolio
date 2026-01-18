@@ -1,16 +1,9 @@
 "use client";
 
 import { FaFolderOpen, FaArrowRight } from "react-icons/fa6";
-import { projects } from "@/types/projects";
+import { projects, Project } from "@/types/projects";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useCallback } from "react";
-
-interface Project {
-  title: string;
-  description: string;
-  image: string;
-  tech: string[];
-}
 
 interface SelectedProject extends Project {
   index: number;
@@ -132,7 +125,7 @@ export default function Projects() {
 
             <motion.div
               layoutId={`project-${selectedProject.index}`}
-              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md md:max-w-3xl max-h-[95vh] bg-white dark:bg-gray-900 rounded-xl shadow-lg z-50 overflow-y-auto flex flex-col"
+              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md md:max-w-3xl max-h-[75vh] md:max-h-[95vh] bg-white dark:bg-gray-900 rounded-xl shadow-lg z-50 overflow-y-auto flex flex-col"
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <motion.div
@@ -151,13 +144,23 @@ export default function Projects() {
                 className="p-6 flex flex-col justify-between"
               >
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    {selectedProject.title}
-                  </h3>
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-xl font-semibold">
+                      {selectedProject.title}
+                    </h3>
+                    <a
+                      href={selectedProject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium"
+                    >
+                      Visit Live Site
+                    </a>
+                  </div>
                   <p className="text-gray-600 dark:text-gray-300 mb-4">
                     {selectedProject.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {selectedProject.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
@@ -167,11 +170,58 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  <div className="space-y-4">
+                    {selectedProject.overview && (
+                      <div>
+                        <h4 className="font-semibold mb-2">Project Overview</h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                          {selectedProject.overview}
+                        </p>
+                      </div>
+                    )}
+
+                    {selectedProject.keyFeatures &&
+                      selectedProject.keyFeatures.length > 0 && (
+                        <div>
+                          <h4 className="font-semibold mb-2">Key Features</h4>
+                          <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1 list-disc list-inside">
+                            {selectedProject.keyFeatures.map(
+                              (feature, index) => (
+                                <li key={index}>{feature}</li>
+                              )
+                            )}
+                          </ul>
+                        </div>
+                      )}
+
+                    {selectedProject.technicalImplementation && (
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Technical Implementation
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                          {selectedProject.technicalImplementation}
+                        </p>
+                      </div>
+                    )}
+
+                    {selectedProject.challengesAndSolutions && (
+                      <div>
+                        <h4 className="font-semibold mb-2">
+                          Challenges & Solutions
+                        </h4>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                          {selectedProject.challengesAndSolutions}
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
                 <button
                   onClick={handleClose}
-                  className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 self-end"
+                  className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 self-end mt-4"
                 >
                   Close
                 </button>

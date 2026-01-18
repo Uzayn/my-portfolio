@@ -4,6 +4,10 @@ export interface Project {
   tech: string[];
   link: string;
   image: string;
+  overview?: string;
+  keyFeatures?: string[];
+  technicalImplementation?: string;
+  challengesAndSolutions?: string;
 }
 
 export const projects: Project[] = [
@@ -12,7 +16,17 @@ export const projects: Project[] = [
     description: "A modern web application built with React and Node.js",
     tech: ["React", "Node.js", "MongoDB"],
     link: "https://github.com/username/project-one",
-    image: "https://picsum.photos/seed/project1/400/300"
+    image: "https://picsum.photos/seed/project1/400/300",
+    overview: "A comprehensive task management application designed to streamline team collaboration and project workflows. Built with modern technologies to ensure scalability and performance.",
+    keyFeatures: [
+      "Real-time collaboration with live updates",
+      "Drag-and-drop task management interface",
+      "Advanced filtering and search capabilities",
+      "Team performance analytics dashboard",
+      "Mobile-responsive design with offline support"
+    ],
+    technicalImplementation: "Developed using React with TypeScript for type safety, Node.js with Express for the backend, and MongoDB for data storage. Implemented WebSocket connections for real-time features and used Redis for session management and caching.",
+    challengesAndSolutions: "Overcame challenges with real-time data synchronization by implementing a robust WebSocket architecture. Solved performance issues through lazy loading and virtualization techniques for large datasets."
   },
   {
     title: "Project Two", 
