@@ -125,7 +125,7 @@ export default function Projects() {
 
             <motion.div
               layoutId={`project-${selectedProject.index}`}
-              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md md:max-w-3xl max-h-[75vh] md:max-h-[95vh] bg-white dark:bg-gray-900 rounded-xl shadow-lg z-50 overflow-y-auto flex flex-col"
+              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md md:max-w-3xl max-h-[70vh] md:max-h-[95vh] bg-white dark:bg-gray-900 rounded-xl shadow-lg z-50 overflow-y-auto flex flex-col"
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <motion.div
