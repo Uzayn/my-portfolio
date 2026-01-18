@@ -125,7 +125,7 @@ export default function Projects() {
 
             <motion.div
               layoutId={`project-${selectedProject.index}`}
-              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md md:max-w-3xl max-h-[70vh] md:max-h-[95vh] bg-white dark:bg-gray-900 rounded-xl shadow-lg z-50 overflow-y-auto flex flex-col"
+              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md md:max-w-3xl max-h-[70vh] md:max-h-[95vh] bg-white dark:bg-gray-900 rounded-xl shadow-2xl z-50 overflow-y-auto flex flex-col"
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <motion.div
@@ -157,14 +157,14 @@ export default function Projects() {
                       Visit Live Site
                     </a>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-xs">
                     {selectedProject.description}
                   </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-1 mb-6">
                     {selectedProject.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                        className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-1.5 py-0.5 rounded"
                       >
                         {tech}
                       </span>

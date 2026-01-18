@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden "
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
       <svg
         className="absolute top-1/4 right-0 w-1/2 h-1/2 md:w-1/3 md:h-2/3 opacity-70 dark:opacity-50"
@@ -124,6 +124,12 @@ export default function Hero() {
           care about creating cool interfaces and intuitive and engaging user
           experiences. <br /> Specializing in React, Next.js, and modern web
           technologies to bring ideas to life.
+        </p>
+      </div>
+
+      <div className="absolute bottom-8 right-8 md:right-12 opacity-40">
+        <p className="text-xs font-light tracking-widest text-gray-400 dark:text-gray-600">
+          Less is More - Steve Jobs
         </p>
       </div>
     </section>
