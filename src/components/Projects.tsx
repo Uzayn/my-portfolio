@@ -21,14 +21,19 @@ export default function Projects() {
     };
 
     if (selectedProject) {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
       document.addEventListener("keydown", handleEscape);
     } else {
       document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "unset";
     }
 
     return () => {
       document.body.style.overflow = "unset";
+      document.body.style.paddingRight = "unset";
       document.removeEventListener("keydown", handleEscape);
     };
   }, [selectedProject]);

@@ -25,7 +25,7 @@ const workExperience: WorkExperience[] = [
     company: "Bilin",
     title: "Frontend Engineer",
     location: "Germany",
-    logo: "https://picsum.photos/seed/bilin/100/100",
+    logo: "/images/companies/bilin.png",
     start: "Aug 2023",
     end: {
       label: "Dec 2025",
@@ -46,7 +46,7 @@ const workExperience: WorkExperience[] = [
     company: "Inspectorama",
     title: "Frontend developer",
     location: "US",
-    logo: "https://picsum.photos/seed/inspectorama/100/100",
+    logo: "/images/companies/inspectorama.png",
     start: "Dec 2022",
     end: {
       label: "Feb 2023",
@@ -62,7 +62,7 @@ const workExperience: WorkExperience[] = [
     company: "Grow",
     title: "Frontend developer",
     location: "Nigeria",
-    logo: "https://picsum.photos/seed/grow/100/100",
+    logo: "/images/companies/grow.png",
     start: "Oct 2022",
     end: {
       label: "May 2023",
@@ -104,7 +104,9 @@ function AccordionItem({
             <Image
               src={role.logo}
               alt={`${role.company} logo`}
-              className="h-7 w-7 rounded-full object-cover"
+              className={`h-7 w-7 rounded-full object-cover ${
+                role.company === "Grow" ? "scale-65" : ""
+              }`}
               width={28}
               height={28}
               loading="lazy"

@@ -12,11 +12,11 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Project One",
-    description: "A modern web application built with React and Node.js",
-    tech: ["React", "Node.js", "MongoDB"],
-    link: "https://github.com/username/project-one",
-    image: "https://picsum.photos/seed/project1/400/300",
+    title: "Brandbreeks",
+    description: "A project management and automations landing page for bookings and details",
+    tech: ["React", "Next.js", "Tailwind"],
+    link: "https://brandbreeks.com",
+    image: "/images/thumbnails/brandbreeks.png",
     overview: "A comprehensive task management application designed to streamline team collaboration and project workflows. Built with modern technologies to ensure scalability and performance.",
     keyFeatures: [
       "Real-time collaboration with live updates",
@@ -29,23 +29,23 @@ export const projects: Project[] = [
     challengesAndSolutions: "Overcame challenges with real-time data synchronization by implementing a robust WebSocket architecture. Solved performance issues through lazy loading and virtualization techniques for large datasets."
   },
   {
-    title: "Project Two", 
-    description: "E-commerce platform with real-time inventory management",
-    tech: ["Next.js", "TypeScript", "PostgreSQL"],
-    link: "https://github.com/username/project-two",
-    image: "https://picsum.photos/seed/project2/400/300"
+    title: "Hoobank", 
+    description: "Landing page for Next generation payment method service",
+    tech: ["React", "Figma", "Tailwind"],
+    link: "https://https://uzayn-hoobank.netlify.app/",
+    image: "/images/thumbnails/Hoobank.png",
   },
   {
-    title: "Project Three",
-    description: "Mobile-first responsive design for a SaaS dashboard",
+    title: "Remote sync",
+    description: "A timezone comparison tool for remote teams",
     tech: ["Vue.js", "Tailwind CSS", "Firebase"],
     link: "https://github.com/username/project-three",
     image: "https://picsum.photos/seed/project3/400/300"
   },
   {
-    title: "Project Four",
-    description: "AI-powered content management system",
-    tech: ["Python", "FastAPI", "React"],
+    title: "Kalendly",
+    description: "Scheduling engine and booking system",
+    tech: ["React", "date-fns", "Tailwind + Headless UI", "Zustand"],
     link: "https://github.com/username/project-four",
     image: "https://picsum.photos/seed/project4/400/300"
   },
