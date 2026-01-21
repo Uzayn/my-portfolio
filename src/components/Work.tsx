@@ -32,7 +32,7 @@ const workExperience: WorkExperience[] = [
       dateTime: "2025",
     },
     details:
-      "Inertia.js, Svelte, TypeScript, Tailwind CSS, ShadCN UI, Laravel, PHP, Sass",
+      "Svelte, TypeScript, Tailwind CSS, ShadCN UI, Laravel, PHP, Sass, Inertia.js, Docker, Redis, Neo4j",
     description: [
       "Started with legacy PHP, Laravel Blade, and Bootstrap codebase; led migration to modern Svelte frontend for improved performance and maintainability.",
       "Integrated Inertia.js to connect PHP backend with Svelte, enabling seamless server-side rendering.",
@@ -201,36 +201,45 @@ export default function Work() {
 
   return (
     <section id="work" className="py-12 md:py-16 lg:py-20">
-      <div className="max-w-4xl mx-auto px-6 md:px-12 space-y-6">
-        <div className="flex items-center space-x-2">
-          <div className="flex items-center space-x-2">
-            <FaBriefcase className="text-sm" />
-            <span>Work</span>
+      <div className="max-w-5xl mx-auto px-6 md:px-12">
+        <div className="flex flex-col md:flex-row md:gap-12 lg:gap-16">
+          {/* Left column - Title */}
+          <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:sticky md:top-24 md:self-start">
+            <div className="flex items-center space-x-2">
+              <FaBriefcase className="text-sm" />
+              <span>Work</span>
+            </div>
+            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 hidden md:block">
+              Experience building products across different industries and tech stacks.
+            </p>
           </div>
-        </div>
-        {/* <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0 dark:via-gray-600" /> */}
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6">
-          <div className="space-y-2">
-            {workExperience.map((role, roleIndex) => (
-              <AccordionItem
-                key={roleIndex}
-                role={role}
-                isOpen={openIndex === roleIndex}
-                onClick={() => toggleAccordion(roleIndex)}
-              />
-            ))}
+
+          {/* Right column - Accordion */}
+          <div className="md:w-2/3 lg:w-3/4">
+            <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6">
+              <div className="space-y-2">
+                {workExperience.map((role, roleIndex) => (
+                  <AccordionItem
+                    key={roleIndex}
+                    role={role}
+                    isOpen={openIndex === roleIndex}
+                    onClick={() => toggleAccordion(roleIndex)}
+                  />
+                ))}
+              </div>
+              <a
+                href="/Graduate Application - Huzain.pdf"
+                download
+                className="group mt-6 flex w-full md:w-auto items-center justify-center rounded-full bg-gray-100 py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
+              >
+                Download Resume
+                <FaArrowDown className="ml-2 h-3 w-3 transition-transform group-hover:translate-y-0.5" />
+              </a>
+              <p className="mt-3 text-xs text-gray-500 dark:text-gray-400 text-center">
+                Last updated: December 2025
+              </p>
+            </div>
           </div>
-          <a
-            href="/Graduate Application - Huzain.pdf"
-            download
-            className="group mt-6 flex w-full md:w-auto items-center justify-center rounded-full bg-gray-100 py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
-          >
-            Download Resume
-            <FaArrowDown className="ml-2 h-3 w-3 transition-transform group-hover:translate-y-0.5" />
-          </a>
-          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400 text-center">
-            Last updated: December 2025
-          </p>
         </div>
       </div>
     </section>

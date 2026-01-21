@@ -26,7 +26,6 @@ export const projects: Project[] = [
       "Mobile-responsive design with offline support"
     ],
     technicalImplementation: "Developed using React with TypeScript for type safety, Node.js with Express for the backend, and MongoDB for data storage. Implemented WebSocket connections for real-time features and used Redis for session management and caching.",
-    challengesAndSolutions: "Overcame challenges with real-time data synchronization by implementing a robust WebSocket architecture. Solved performance issues through lazy loading and virtualization techniques for large datasets."
   },
   {
     title: "Hoobank", 

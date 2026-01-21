@@ -46,72 +46,85 @@ export default function Projects() {
     setSelectedProject(null);
   }, []);
 
-  return (
-    <section id="projects" className="p-4 md:p-8 lg:p-12">
-      <div className="max-w-6xl">
-        <div className="flex items-center space-x-2 mb-8">
-          <FaFolderOpen className="text-sm" />
-          <span>Projects</span>
+  const renderProjectCard = (project: Project, index: number) => (
+    <motion.div
+      key={index}
+      layoutId={`project-${index}`}
+      onClick={() => handleProjectClick(project, index)}
+      className="relative w-full h-64 overflow-hidden transition-shadow cursor-pointer rounded-xl bg-white dark:bg-gray-900"
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 200, damping: 25 }}
+    >
+      <motion.div
+        className="absolute top-0 right-0 w-3/4 h-48 overflow-hidden"
+        layoutId={`image-${index}`}
+      >
+        <div className="relative w-full h-full">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover rounded-t-xl border-0"
+            loading="lazy"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/95 to-transparent dark:from-gray-900 dark:via-gray-900/95" />
         </div>
+      </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              layoutId={`project-${index}`}
-              onClick={() => handleProjectClick(project, index)}
-              className="relative w-full h-64 overflow-hidden transition-shadow cursor-pointer rounded-xl bg-white dark:bg-gray-900"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              <motion.div
-                className="absolute top-0 right-0 w-3/4 h-48 overflow-hidden"
-                layoutId={`image-${index}`}
+      <motion.div
+        className="absolute bottom-0 left-0 w-3/4 p-4 flex flex-col justify-between"
+        layoutId={`details-${index}`}
+      >
+        <div>
+          <h3 className="text-base font-semibold mb-2">{project.title}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-3 text-xs">
+            {project.description}
+          </p>
+          <div className="flex flex-wrap gap-1 mb-3">
+            {project.tech.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-1.5 py-0.5 rounded"
               >
-                <div className="relative w-full h-full">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover rounded-t-xl border-0"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/95 to-transparent dark:from-gray-900 dark:via-gray-900/95" />
-                </div>
-              </motion.div>
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
 
-              <motion.div
-                className="absolute bottom-0 left-0 w-3/4 p-4 flex flex-col justify-between"
-                layoutId={`details-${index}`}
-              >
-                <div>
-                  <h3 className="text-base font-semibold mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-3 text-xs">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1 mb-3">
-                    {project.tech.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-1.5 py-0.5 rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </motion.div>
-          ))}
-          <div className="flex justify-center mt-8">
-            <a
-              href="/projects"
-              className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center space-x-1"
-            >
-              <span>See all</span>
-              <FaArrowRight className="text-xs" />
-            </a>
+  return (
+    <section id="projects" className="py-12 md:py-16 lg:py-20">
+      <div className="max-w-5xl mx-auto px-6 md:px-12">
+        <div className="flex flex-col md:flex-row md:gap-12 lg:gap-16">
+          {/* Left column - Title only */}
+          <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0">
+            <div className="flex items-center space-x-2">
+              <FaFolderOpen className="text-sm" />
+              <span>Projects</span>
+            </div>
+            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 hidden md:block">
+              A selection of things I&apos;ve built and shipped.
+            </p>
+          </div>
+
+          {/* Right column - Grid */}
+          <div className="md:w-2/3 lg:w-3/4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {projects.map((project, index) =>
+                renderProjectCard(project, index),
+              )}
+              <div className="flex justify-center mt-8 lg:col-span-2">
+                <a
+                  href="/projects"
+                  className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center space-x-1"
+                >
+                  <span>See all</span>
+                  <FaArrowRight className="text-xs" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -131,7 +144,7 @@ export default function Projects() {
             <motion.div
               layoutId={`project-${selectedProject.index}`}
               className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-md md:max-w-3xl max-h-[70vh] md:max-h-[95vh] bg-white dark:bg-gray-900 rounded-xl shadow-2xl z-50 overflow-y-auto flex flex-col"
-              transition={{ duration: 0.3, ease: "easeInOut" }}
+              transition={{ type: "spring", stiffness: 200, damping: 25 }}
             >
               <motion.div
                 layoutId={`image-${selectedProject.index}`}
@@ -194,7 +207,7 @@ export default function Projects() {
                             {selectedProject.keyFeatures.map(
                               (feature, index) => (
                                 <li key={index}>{feature}</li>
-                              )
+                              ),
                             )}
                           </ul>
                         </div>
