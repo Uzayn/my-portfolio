@@ -92,7 +92,7 @@ export default function Navigation() {
 
     const updateIndicator = () => {
       const activeIndex = navItems.findIndex(
-        (item) => item.id === activeSection
+        (item) => item.id === activeSection,
       );
       if (activeIndex !== -1) {
         let currentLeft = 0;
@@ -145,7 +145,7 @@ export default function Navigation() {
       setScrolled(window.scrollY > 50);
 
       if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-      scrollTimeout.current = setTimeout(updateActiveSection, 50);
+      scrollTimeout.current = setTimeout(updateActiveSection, 25);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -160,7 +160,7 @@ export default function Navigation() {
     const element = document.getElementById(sectionId);
     if (element) {
       const currentIndex = navItems.findIndex(
-        (item) => item.id === activeSection
+        (item) => item.id === activeSection,
       );
       const targetIndex = navItems.findIndex((item) => item.id === sectionId);
       const isAdjacent = Math.abs(currentIndex - targetIndex) === 1;
@@ -283,7 +283,7 @@ export default function Navigation() {
             >
               {item.label}
             </span>
-          ) : null
+          ) : null,
         )}
       </div>
     </nav>
