@@ -7,9 +7,47 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
+const siteUrl = "https://huzain.work";
+
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Personal portfolio website",
+  title: {
+    default: "Huzain Koleosho | Frontend Engineer",
+    template: "%s | Huzain Koleosho",
+  },
+  description:
+    "Frontend engineer who cares about how software feels. Building interfaces that are considered, not just functional.",
+  metadataBase: new URL(siteUrl),
+  authors: [{ name: "Huzain Koleosho", url: siteUrl }],
+  creator: "Huzain Koleosho",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Huzain Koleosho",
+    title: "Huzain Koleosho | Frontend Engineer",
+    description:
+      "Frontend engineer who cares about how software feels. Building interfaces that are considered, not just functional.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Huzain Koleosho - Frontend Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Huzain Koleosho | Frontend Engineer",
+    description:
+      "Frontend engineer who cares about how software feels. Building interfaces that are considered, not just functional.",
+    creator: "@kolhuz",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [
       { url: "/images/favicon.ico", sizes: "any" },
