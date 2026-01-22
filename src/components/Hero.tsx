@@ -116,10 +116,9 @@ export default function Hero() {
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0 dark:via-gray-600" />
 
         <p className=" text-gray-500 dark:text-gray-400 max-w-prose font-light">
-          Engineering, developing, commiting & everything in between. <br /> I
-          care about creating cool interfaces and intuitive and engaging user
-          experiences. <br /> Specializing in React, Next.js, and modern web
-          technologies to bring ideas to life.
+          Engineering, developing, commiting & everything in between. <br />
+          I care about creating cool interfaces and engaging experiences
+          <br />
         </p>
       </div>
 

@@ -17,7 +17,7 @@ interface WorkExperience {
   };
   details: string; // Tech stack
   description: string[]; // Bullet points for responsibilities, achievements
-  collaborators?: string[]; // Optional: List of collaborators
+  collaborators?: { name: string; url: string }[]; // Optional: List of collaborators with URLs
 }
 
 const workExperience: WorkExperience[] = [
@@ -40,7 +40,13 @@ const workExperience: WorkExperience[] = [
       "Implemented new features using ShadCN UI components, enhancing user experience and accessibility.",
       "Developed a custom video player using Vidstack to meet specific product requirements, ensuring seamless integration and enhanced user engagement.",
     ],
-    collaborators: ["Elia Hilse", "Lambiv Gills"],
+    collaborators: [
+      { name: "Elia Hilse", url: "https://elia.vc/" },
+      {
+        name: "Lambiv Gills",
+        url: "https://cm.linkedin.com/in/lambiv-dzenyuy",
+      },
+    ],
   },
   {
     company: "Inspectorama",
@@ -168,8 +174,17 @@ function AccordionItem({
                     With:
                   </span>
                   <ul className="list-none pl-0 space-y-1 text-sm text-gray-600 dark:text-gray-400">
-                    {role.collaborators.map((name, index) => (
-                      <li key={index}>{name}</li>
+                    {role.collaborators.map((collaborator, index) => (
+                      <li key={index}>
+                        <a
+                          href={collaborator.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline"
+                        >
+                          {collaborator.name}
+                        </a>
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -210,7 +225,8 @@ export default function Work() {
               <span>Work</span>
             </div>
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 hidden md:block">
-              Experience building products across different industries and tech stacks.
+              Experience building products across different industries and tech
+              stacks.
             </p>
           </div>
 

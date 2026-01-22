@@ -16,6 +16,7 @@ import {
   SiTypescript,
   SiFramer,
   SiTailwindcss,
+  SiShadcnui,
 } from "react-icons/si";
 
 const technologies = [
@@ -30,6 +31,7 @@ const technologies = [
   { name: "Figma", icon: FaFigma, color: "text-purple-500" },
   { name: "Framer", icon: SiFramer, color: "text-blue-600" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
+  { name: "ShadCN", icon: SiShadcnui, color: "text-black dark:text-white" },
   { name: "Sass", icon: FaSass, color: "text-pink-500" },
   { name: "Git", icon: FaGitAlt, color: "text-red-500" },
   { name: "GitHub", icon: FaGithub, color: "text-gray-800 dark:text-white" },
@@ -67,6 +69,14 @@ export default function Stack() {
                   </div>
                 );
               })}
+            </div>
+
+            {/* Also worked with */}
+            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                <span className="text-gray-600 dark:text-gray-300">Also worked with:</span>{" "}
+                Docker, Redis, Neo4j, MySQL, PostgreSQL, PHP, Laravel
+              </p>
             </div>
           </div>
         </div>
