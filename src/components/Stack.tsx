@@ -20,7 +20,7 @@ import {
 } from "react-icons/si";
 
 const technologies = [
-  { name: "Next.js", icon: SiNextdotjs, color: "text-black dark:text-white" },
+  { name: "Next.js", icon: SiNextdotjs, color: "text-black" },
   { name: "React", icon: FaReact, color: "text-cyan-500" },
   { name: "Svelte", icon: SiSvelte, color: "text-orange-500" },
   { name: "Vue", icon: FaVuejs, color: "text-green-500" },
@@ -31,10 +31,10 @@ const technologies = [
   { name: "Figma", icon: FaFigma, color: "text-purple-500" },
   { name: "Framer", icon: SiFramer, color: "text-blue-600" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
-  { name: "ShadCN", icon: SiShadcnui, color: "text-black dark:text-white" },
+  { name: "ShadCN", icon: SiShadcnui, color: "text-black" },
   { name: "Sass", icon: FaSass, color: "text-pink-500" },
   { name: "Git", icon: FaGitAlt, color: "text-red-500" },
-  { name: "GitHub", icon: FaGithub, color: "text-gray-800 dark:text-white" },
+  { name: "GitHub", icon: FaGithub, color: "text-gray-800" },
 ];
 
 export default function Stack() {
@@ -48,7 +48,7 @@ export default function Stack() {
               <FaLayerGroup className="text-sm" />
               <span>Tech Stack</span>
             </div>
-            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 hidden md:block">
+            <p className="mt-3 text-sm text-gray-500 hidden md:block">
               Tools and technologies I work with.
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function Stack() {
                     <div className="size-8 md:size-10">
                       <Icon className={`w-full h-full ${tech.color}`} />
                     </div>
-                    <span className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                    <span className="text-xs text-gray-500 text-center">
                       {tech.name}
                     </span>
                   </div>
@@ -72,9 +72,9 @@ export default function Stack() {
             </div>
 
             {/* Also worked with */}
-            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-800">
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                <span className="text-gray-600 dark:text-gray-300">Also worked with:</span>{" "}
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <p className="text-sm text-gray-500">
+                <span className="text-gray-600">Also worked with:</span>{" "}
                 Docker, Redis, Neo4j, MySQL, PostgreSQL, PHP, Laravel
               </p>
             </div>

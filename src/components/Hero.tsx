@@ -7,7 +7,7 @@ export default function Hero() {
       className="pt-32 pb-24 md:min-h-screen flex items-center relative overflow-hidden"
     >
       <svg
-        className="absolute top-1/4 right-0 w-1/2 h-1/2 md:w-1/3 md:h-2/3 opacity-70 dark:opacity-50"
+        className="absolute top-1/4 right-0 w-1/2 h-1/2 md:w-1/3 md:h-2/3 opacity-70"
         viewBox="0 0 400 400"
       >
         <circle
@@ -15,84 +15,84 @@ export default function Hero() {
           cy="50"
           r="4"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="100"
           cy="80"
           r="6"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="150"
           cy="30"
           r="3"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="200"
           cy="100"
           r="5"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="250"
           cy="60"
           r="4"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="300"
           cy="120"
           r="7"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="350"
           cy="40"
           r="3"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="80"
           cy="150"
           r="5"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="130"
           cy="200"
           r="4"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="180"
           cy="250"
           r="6"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="230"
           cy="300"
           r="3"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
         <circle
           cx="280"
           cy="350"
           r="5"
           fill="currentColor"
-          className="text-gray-300 dark:text-gray-700"
+          className="text-gray-300"
         />
       </svg>
 
@@ -109,13 +109,13 @@ export default function Hero() {
           Huzain Koleosho
         </h1>
 
-        <p className="text-base md:text-2xl font-light text-gray-600 dark:text-gray-400">
+        <p className="text-base md:text-2xl font-light text-gray-600">
           Frontend Engineer
         </p>
 
-        <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0 dark:via-gray-600" />
+        <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0" />
 
-        <p className=" text-gray-500 dark:text-gray-400 max-w-prose font-light">
+        <p className="text-gray-500 max-w-prose font-light">
           Engineering, developing, commiting & everything in between. <br />
           I care about creating cool interfaces and engaging experiences
           <br />
@@ -123,7 +123,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute bottom-8 right-8 md:right-12">
-        <p className="text-sm md:text-base font-medium tracking-wide text-gray-600 dark:text-gray-400">
+        <p className="text-sm md:text-base font-medium tracking-wide text-gray-600">
           I build, this is proof
         </p>
       </div>

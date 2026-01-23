@@ -17,7 +17,7 @@ function Expandable({ trigger, detail, isOpen, onToggle }: ExpandableProps) {
     <span className="inline">
       <button
         onClick={onToggle}
-        className="text-gray-900 dark:text-gray-100 underline decoration-dotted underline-offset-4 hover:decoration-solid cursor-pointer"
+        className="text-gray-900 underline decoration-dotted underline-offset-4 hover:decoration-solid cursor-pointer"
       >
         {trigger}
       </button>
@@ -28,7 +28,7 @@ function Expandable({ trigger, detail, isOpen, onToggle }: ExpandableProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="text-gray-600 dark:text-gray-300"
+            className="text-gray-600"
           >
             {" "}— {detail}
           </motion.span>
@@ -71,7 +71,7 @@ export default function About() {
               <FaUser className="text-sm" />
               <span>About</span>
             </div>
-            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 hidden md:block">
+            <p className="mt-3 text-sm text-gray-500 hidden md:block">
               A bit more about me.
             </p>
           </div>
@@ -80,7 +80,7 @@ export default function About() {
           <div className="md:w-2/3 lg:w-3/4">
             <div className="flex flex-col lg:flex-row gap-8 items-start">
               {/* Text Content */}
-              <div className="lg:w-1/2 text-gray-600 dark:text-gray-300 leading-relaxed">
+              <div className="lg:w-1/2 text-gray-600 leading-relaxed">
                 <p>
                   I&apos;m a{" "}
                   <Expandable

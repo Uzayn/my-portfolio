@@ -183,14 +183,14 @@ export default function Navigation() {
   const activeIndex = navItems.findIndex((item) => item.id === activeSection);
   const isFirst = activeIndex === 0;
   const isLast = activeIndex === navItems.length - 1;
-  let indicatorClass = "absolute bg-gray-200 dark:bg-gray-700 rounded-sm";
+  let indicatorClass = "absolute bg-gray-200 rounded-sm";
   if (isFirst) indicatorClass += " rounded-l-full !rounded-r-lg";
   if (isLast) indicatorClass += " rounded-r-full !rounded-l-lg";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
       <motion.div
-        className="bg-white/80 dark:bg-black/80 backdrop-blur-md border border-gray-200 dark:border-gray-800 rounded-full shadow-lg"
+        className="bg-white/80 backdrop-blur-md border border-gray-200 rounded-full shadow-lg"
         initial={{ scale: 1, y: 0 }}
         animate={{
           scale: scrolled ? 0.85 : 1,
@@ -230,8 +230,8 @@ export default function Navigation() {
                 onClick={() => scrollToSection(item.id)}
                 className={`relative z-10 flex items-center px-2 sm:px-3 py-2 rounded-lg transition-colors duration-300 ${
                   activeSection === item.id
-                    ? "text-black dark:text-white"
-                    : "text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"
+                    ? "text-black"
+                    : "text-gray-500 hover:text-black"
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

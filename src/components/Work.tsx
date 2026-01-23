@@ -94,7 +94,7 @@ function AccordionItem({
 }) {
   return (
     <motion.div
-      className="border-b border-gray-200 dark:border-gray-700 last:border-b-0 relative"
+      className="border-b border-gray-200 last:border-b-0 relative"
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
@@ -106,7 +106,7 @@ function AccordionItem({
         aria-controls={`accordion-content-${role.company}`}
       >
         <div className="flex w-full items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 shrink-0">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 shrink-0">
             <Image
               src={role.logo}
               alt={`${role.company} logo`}
@@ -121,19 +121,19 @@ function AccordionItem({
           </div>
           <div className="flex flex-col flex-1">
             <div className="flex items-center gap-x-2">
-              <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+              <span className="text-sm font-medium text-gray-900">
                 {role.company}
               </span>
-              <span className="text-xs font-light text-gray-400 dark:text-gray-500">
+              <span className="text-xs font-light text-gray-400">
                 {role.location}
               </span>
             </div>
             <div className="flex justify-between items-center mt-1">
-              <span className="text-xs font-light text-gray-500 dark:text-gray-400">
+              <span className="text-xs font-light text-gray-500">
                 {role.title}
               </span>
               <time
-                className="text-xs font-light text-gray-400 dark:text-gray-500"
+                className="text-xs font-light text-gray-400"
                 dateTime={`${role.start} to ${role.end.dateTime}`}
               >
                 {role.start} — {role.end.label}
@@ -144,7 +144,7 @@ function AccordionItem({
       </button>
       <motion.button
         onClick={onClick}
-        className={`absolute top-6 right-4 h-4 w-4 text-gray-500 dark:text-gray-400 transition-transform ${
+        className={`absolute top-6 right-4 h-4 w-4 text-gray-500 transition-transform ${
           isOpen ? "rotate-180" : ""
         }`}
         whileHover={{ scale: 1.1 }}
@@ -163,24 +163,24 @@ function AccordionItem({
             className="overflow-hidden"
           >
             <div className="pb-4 pt-2 space-y-4">
-              <ul className="list-disc pl-5 space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="list-disc pl-5 space-y-2 text-sm text-gray-600">
                 {role.description.map((bullet, index) => (
                   <li key={index}>{bullet}</li>
                 ))}
               </ul>
               {role.collaborators && role.collaborators.length > 0 && (
                 <div className="space-y-1">
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <span className="text-sm font-medium text-gray-700">
                     With:
                   </span>
-                  <ul className="list-none pl-0 space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                  <ul className="list-none pl-0 space-y-1 text-sm text-gray-600">
                     {role.collaborators.map((collaborator, index) => (
                       <li key={index}>
                         <a
                           href={collaborator.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 hover:underline"
+                          className="text-blue-600 hover:text-blue-800 hover:underline"
                         >
                           {collaborator.name}
                         </a>
@@ -193,7 +193,7 @@ function AccordionItem({
                 {role.details.split(", ").map((tech, index) => (
                   <span
                     key={index}
-                    className="text-xs bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-2 py-1 rounded-md"
+                    className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-md"
                   >
                     {tech}
                   </span>
@@ -224,7 +224,7 @@ export default function Work() {
               <FaBriefcase className="text-sm" />
               <span>Work</span>
             </div>
-            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 hidden md:block">
+            <p className="mt-3 text-sm text-gray-500 hidden md:block">
               Experience building products across different industries and tech
               stacks.
             </p>
@@ -232,7 +232,7 @@ export default function Work() {
 
           {/* Right column - Accordion */}
           <div className="md:w-2/3 lg:w-3/4">
-            <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-6">
+            <div className="border border-gray-200 rounded-lg p-4 md:p-6">
               <div className="space-y-2">
                 {workExperience.map((role, roleIndex) => (
                   <AccordionItem
@@ -246,12 +246,12 @@ export default function Work() {
               <a
                 href="/Graduate Application - Huzain.pdf"
                 download
-                className="group mt-6 flex w-full md:w-auto items-center justify-center rounded-full bg-gray-100 py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
+                className="group mt-6 flex w-full md:w-auto items-center justify-center rounded-full bg-gray-100 py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-200 transition-colors"
               >
                 Download Resume
                 <FaArrowDown className="ml-2 h-3 w-3 transition-transform group-hover:translate-y-0.5" />
               </a>
-              <p className="mt-3 text-xs text-gray-500 dark:text-gray-400 text-center">
+              <p className="mt-3 text-xs text-gray-500 text-center">
                 Last updated: December 2025
               </p>
             </div>
