@@ -30,7 +30,7 @@ function Expandable({ trigger, detail, isOpen, onToggle }: ExpandableProps) {
             transition={{ duration: 0.2 }}
             className="text-gray-600"
           >
-            {" "}— {detail}
+            {detail}
           </motion.span>
         )}
       </AnimatePresence>
@@ -82,57 +82,68 @@ export default function About() {
               {/* Text Content */}
               <div className="lg:w-1/2 text-gray-600 leading-relaxed">
                 <p>
-                  I&apos;m a{" "}
-                  <Expandable
-                    trigger="frontend engineer"
-                    detail=" who cares about how software makes people feel — not just whether it works, but whether it feels right to use."
-                    isOpen={expanded.has("work")}
-                    onToggle={() => toggle("work")}
-                  />{" "}
-                  from Nigeria. I&apos;ve spent the past few years{" "}
+                  Frontend engineer based in Nigeria.
+                  I&apos;ve spent the past few years{" "}
                   <Expandable
                     trigger="shipping products"
-                    detail=", leading codebase migrations, and turning messy legacy code into something maintainable"
+                    detail=", led a migration from legacy PHP to Svelte at Bilin, built landing pages, and worked across different stacks"
                     isOpen={expanded.has("shipping")}
                     onToggle={() => toggle("shipping")}
                   />
-                  . I understand how frontend connects to backend, and I have a solid grasp of{" "}
+                  , mostly in React and Next.js. I pay attention to{" "}
                   <Expandable
-                    trigger="design fundamentals"
-                    detail=" — spacing, typography, hierarchy, the stuff that makes interfaces feel considered rather than thrown together"
-                    isOpen={expanded.has("design")}
-                    onToggle={() => toggle("design")}
+                    trigger="the details"
+                    detail=", spacing, typography, small interactions. The things that make an interface feel intentional"
+                    isOpen={expanded.has("details")}
+                    onToggle={() => toggle("details")}
                   />
-                  . I&apos;d like to{" "}
+                  . Currently{" "}
                   <Expandable
-                    trigger="build something of my own"
-                    detail=" someday — a product, maybe a startup. I find myself thinking about problems and wanting to solve them"
-                    isOpen={expanded.has("build")}
-                    onToggle={() => toggle("build")}
+                    trigger="building a business"
+                    detail=" with my partner, Brandbreeks. I handle the frontend and make design calls through research"
+                    isOpen={expanded.has("business")}
+                    onToggle={() => toggle("business")}
                   />
-                  . When I&apos;m not coding, I&apos;m managing my{" "}
+                  .
+                </p>
+                <p className="mt-4">
+                  Outside of code:{" "}
                   <Expandable
-                    trigger="FPL team"
-                    detail=" (since 2019, ask me about it)"
+                    trigger="FPL"
+                    detail=", been managing my team since 2019, ask me about it"
                     isOpen={expanded.has("fpl")}
                     onToggle={() => toggle("fpl")}
                   />
-                  , playing{" "}
+                  ,{" "}
                   <Expandable
                     trigger="tennis"
-                    detail=" or chess — though I&apos;ve never learned any chess theory, I just move pieces and hope"
+                    detail=" and chess, though I&apos;ve never learned any chess theory. I just move pieces and hope"
                     isOpen={expanded.has("tennis")}
                     onToggle={() => toggle("tennis")}
                   />
-                  , or listening to{" "}
+                  , and{" "}
                   <Expandable
                     trigger="old school afrobeats"
-                    detail=" — Fela, King Sunny Ade, Ebenezer Obey, the classics"
+                    detail=", Fela, King Sunny Ade, Ebenezer Obey"
                     isOpen={expanded.has("music")}
                     onToggle={() => toggle("music")}
                   />
                   .
                 </p>
+                <AnimatePresence>
+                  {expanded.size > 0 && (
+                    <motion.button
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      onClick={() => setExpanded(new Set())}
+                      className="mt-4 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                    >
+                      Collapse
+                    </motion.button>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Image */}
