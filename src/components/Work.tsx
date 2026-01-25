@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBriefcase, FaChevronDown, FaArrowDown } from "react-icons/fa6";
+import { FaBriefcase, FaChevronDown, FaArrowUpRightFromSquare } from "react-icons/fa6";
 import Image from "next/image";
 
 interface WorkExperience {
@@ -244,12 +244,13 @@ export default function Work() {
                 ))}
               </div>
               <a
-                href="/Graduate Application - Huzain.pdf"
-                download
+                href="https://drive.google.com/file/d/1o0WnINZsTvatORbabZlhTSGvHXjB_orG/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group mt-6 flex w-full md:w-auto items-center justify-center rounded-full bg-gray-100 py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-200 transition-colors"
               >
-                Download Resume
-                <FaArrowDown className="ml-2 h-3 w-3 transition-transform group-hover:translate-y-0.5" />
+                View Resume
+                <FaArrowUpRightFromSquare className="ml-2 h-3 w-3" />
               </a>
               <p className="mt-3 text-xs text-gray-500 text-center">
                 Last updated: December 2025
