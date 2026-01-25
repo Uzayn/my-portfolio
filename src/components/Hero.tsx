@@ -106,27 +106,29 @@ export default function Hero() {
             backgroundClip: "text",
           }}
         >
-          Huzain Koleosho
+          I build, this is proof
         </h1>
 
         <p className="text-base md:text-2xl font-light text-gray-600">
-          Frontend Engineer
+          - Huzain Koleosho,{" "}
+          <span className="font-extralight">Frontend engineer</span>
         </p>
 
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0" />
 
         <p className="text-gray-500 max-w-prose font-light">
-          Engineering, developing, commiting & everything in between. <br />
-          I care about creating cool interfaces and engaging experiences
+          Web, engineering, developing, commiting & everything in between.{" "}
+          <br />
+          I care about creating cool web interfaces and engaging experiences
           <br />
         </p>
       </div>
 
-      <div className="absolute bottom-8 right-8 md:right-12">
+      {/* <div className="absolute bottom-8 right-8 md:right-12">
         <p className="text-sm md:text-base font-medium tracking-wide text-gray-600">
           I build, this is proof
         </p>
-      </div>
+      </div> */}
     </section>
   );
 }
