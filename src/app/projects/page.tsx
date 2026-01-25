@@ -124,39 +124,10 @@ export default function ProjectsPage() {
                   ))}
                 </div>
 
-                {selectedProject.overview && (
-                  <div className="mb-4">
-                    <h3 className="text-sm font-medium text-gray-900 mb-2">
-                      Overview
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {selectedProject.overview}
-                    </p>
-                  </div>
-                )}
-
-                {selectedProject.keyFeatures && selectedProject.keyFeatures.length > 0 && (
-                  <div className="mb-4">
-                    <h3 className="text-sm font-medium text-gray-900 mb-2">
-                      Key Features
-                    </h3>
-                    <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside">
-                      {selectedProject.keyFeatures.map((feature, i) => (
-                        <li key={i}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {selectedProject.technicalImplementation && (
-                  <div className="mb-4">
-                    <h3 className="text-sm font-medium text-gray-900 mb-2">
-                      Technical Implementation
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {selectedProject.technicalImplementation}
-                    </p>
-                  </div>
+                {selectedProject.story && (
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {selectedProject.story}
+                  </p>
                 )}
 
                 <button
