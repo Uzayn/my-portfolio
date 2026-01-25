@@ -76,9 +76,7 @@ export default function Projects() {
       >
         <div>
           <h3 className="text-base font-semibold mb-2">{project.title}</h3>
-          <p className="text-gray-600 mb-3 text-xs">
-            {project.description}
-          </p>
+          <p className="text-gray-600 mb-3 text-xs">{project.description}</p>
           <div className="flex flex-wrap gap-1 mb-3">
             {project.tech.map((tech, techIndex) => (
               <span
@@ -115,7 +113,7 @@ export default function Projects() {
               {projects.map((project, index) =>
                 renderProjectCard(project, index),
               )}
-              <div className="flex justify-center mt-8 lg:col-span-2">
+              <div className="flex justify-center mt-4 lg:col-span-2">
                 <a
                   href="/projects"
                   className="text-sm text-blue-600 hover:text-blue-800 flex items-center space-x-1"
@@ -189,52 +187,11 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div className="space-y-4">
-                    {selectedProject.overview && (
-                      <div>
-                        <h4 className="font-semibold mb-2">Project Overview</h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {selectedProject.overview}
-                        </p>
-                      </div>
-                    )}
-
-                    {selectedProject.keyFeatures &&
-                      selectedProject.keyFeatures.length > 0 && (
-                        <div>
-                          <h4 className="font-semibold mb-2">Key Features</h4>
-                          <ul className="text-gray-600 text-sm space-y-1 list-disc list-inside">
-                            {selectedProject.keyFeatures.map(
-                              (feature, index) => (
-                                <li key={index}>{feature}</li>
-                              ),
-                            )}
-                          </ul>
-                        </div>
-                      )}
-
-                    {selectedProject.technicalImplementation && (
-                      <div>
-                        <h4 className="font-semibold mb-2">
-                          Technical Implementation
-                        </h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {selectedProject.technicalImplementation}
-                        </p>
-                      </div>
-                    )}
-
-                    {selectedProject.challengesAndSolutions && (
-                      <div>
-                        <h4 className="font-semibold mb-2">
-                          Challenges & Solutions
-                        </h4>
-                        <p className="text-gray-600 text-sm leading-relaxed">
-                          {selectedProject.challengesAndSolutions}
-                        </p>
-                      </div>
-                    )}
-                  </div>
+                  {selectedProject.story && (
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {selectedProject.story}
+                    </p>
+                  )}
                 </div>
 
                 <button

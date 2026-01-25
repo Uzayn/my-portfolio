@@ -4,55 +4,40 @@ export interface Project {
   tech: string[];
   link: string;
   image: string;
-  overview?: string;
-  keyFeatures?: string[];
-  technicalImplementation?: string;
-  challengesAndSolutions?: string;
+  story?: string;
 }
 
 export const projects: Project[] = [
   {
-    title: "Brandbreeks",
-    description: "A project management and automations landing page for bookings and details",
-    tech: ["React", "Next.js", "Tailwind"],
-    link: "https://brandbreeks.com",
-    image: "/images/thumbnails/brandbreeks.png",
-    overview: "A comprehensive task management application designed to streamline team collaboration and project workflows. Built with modern technologies to ensure scalability and performance.",
-    keyFeatures: [
-      "Real-time collaboration with live updates",
-      "Drag-and-drop task management interface",
-      "Advanced filtering and search capabilities",
-      "Team performance analytics dashboard",
-      "Mobile-responsive design with offline support"
-    ],
-    technicalImplementation: "Developed using React with TypeScript for type safety, Node.js with Express for the backend, and MongoDB for data storage. Implemented WebSocket connections for real-time features and used Redis for session management and caching.",
-  },
-  {
-    title: "Hoobank", 
-    description: "Landing page for Next generation payment method service",
-    tech: ["React", "Figma", "Tailwind"],
-    link: "https://https://uzayn-hoobank.netlify.app/",
-    image: "/images/thumbnails/Hoobank.png",
+    title: "Kalendly",
+    description: "Scheduling engine and booking system",
+    tech: ["React", "date-fns", "Tailwind + Headless UI", "Zustand"],
+    link: "https://github.com/username/project-four",
+    image: "https://picsum.photos/seed/project4/400/300",
+    story: "A Calendly clone I'm building to push myself on a larger-scale project. Scheduling logic, calendar UI, availability management, booking flows — the kind of complexity that doesn't fit in a weekend project. Still in progress.",
   },
   {
     title: "Remote sync",
     description: "A timezone comparison tool for remote teams",
     tech: ["Vue.js", "Tailwind CSS", "Firebase"],
     link: "https://github.com/username/project-three",
-    image: "https://picsum.photos/seed/project3/400/300"
+    image: "https://picsum.photos/seed/project3/400/300",
+    story: "Born from a real problem. I was on a team spread across Nigeria, Pakistan, and Bangladesh — calling teammates often meant catching them at 2am. This lets you add your team, see everyone's local time at a glance, and know when it's actually okay to call.",
   },
   {
-    title: "Kalendly",
-    description: "Scheduling engine and booking system",
-    tech: ["React", "date-fns", "Tailwind + Headless UI", "Zustand"],
-    link: "https://github.com/username/project-four",
-    image: "https://picsum.photos/seed/project4/400/300"
+    title: "Brandbreeks",
+    description: "A project management and automations landing page",
+    tech: ["React", "Next.js", "Tailwind"],
+    link: "https://brandbreeks.com",
+    image: "/images/thumbnails/brandbreeks.png",
+    story: "A real business I'm building with my partner. No designer on this one — I handled the frontend and made design decisions through research, studying what works in similar landing pages and adapting it to fit our brand. It's live and evolving as the business grows.",
   },
   {
-    title: "Project Five",
-    description: "Real-time collaboration tool for remote teams",
-    tech: ["Socket.io", "Express", "React"],
-    link: "https://github.com/username/project-five",
-    image: "https://picsum.photos/seed/project5/400/300"
-  }
+    title: "Hoobank",
+    description: "Landing page for Next generation payment method service",
+    tech: ["React", "Figma", "Tailwind"],
+    link: "https://uzayn-hoobank.netlify.app/",
+    image: "/images/thumbnails/Hoobank.png",
+    story: "A Figma-to-code build. Took a polished design and turned it into a fully responsive React site, matching the original down to the details.",
+  },
 ];
