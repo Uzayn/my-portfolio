@@ -99,7 +99,7 @@ export default function Projects() {
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:gap-12 lg:gap-16">
           {/* Left column - Title only */}
-          <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0">
+          <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:sticky md:top-24 md:self-start">
             <div className="flex items-center space-x-2">
               <FaFolderOpen className="text-sm" />
               <span>Projects</span>
