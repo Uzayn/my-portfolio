@@ -8,14 +8,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    title: "Kalendly",
-    description: "Scheduling engine and booking system",
-    tech: ["React","Tailwind", "Supabase", "Node + Express"],
-    link: "https://github.com/username/project-four",
-    image: "https://picsum.photos/seed/project4/400/300",
-    story: "A Calendly clone I'm building to push myself on a larger-scale project. Scheduling logic, calendar UI, availability management, booking flows — the kind of complexity that doesn't fit in a weekend project. Still in progress.",
-  },
+  
   {
     title: "Remote sync",
     description: "A timezone comparison tool for remote teams",
@@ -23,6 +16,14 @@ export const projects: Project[] = [
     link: "https://remote-teams-sync.vercel.app/",
     image: "/images/thumbnails/remotesync.png",
     story: "Born from a real problem. I was on a team spread across Africa, Asia, and Europe, and randomly calling teammates often meant catching them at 2am. This project lets you add your team so you can see everyone's local time at a glance, and know when it's an appropriate time to call.",
+  },
+  {
+    title: "Kalendly",
+    description: "Scheduling engine and booking system",
+    tech: ["React","Tailwind", "Supabase", "Node + Express"],
+    link: "images/thumbnails/remotesync.png",
+    image: "images/thumbnails/kalendly.png",
+    story: "A Calendly clone I'm building to push myself on a larger-scale project. Scheduling logic, calendar UI, availability management, booking flows — the kind of complexity that doesn't fit in a weekend project. Still in progress.",
   },
   {
     title: "Brandbreeks",
