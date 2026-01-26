@@ -20,7 +20,7 @@ export const projects: Project[] = [
     title: "Remote sync",
     description: "A timezone comparison tool for remote teams",
     tech: ["Svelte", "Tailwind CSS"],
-    link: "https://github.com/username/project-three",
+    link: "https://remote-teams-sync.vercel.app/",
     image: "/images/thumbnails/remotesync.png",
     story: "Born from a real problem. I was on a team spread across Africa, Asia, and Europe, and randomly calling teammates often meant catching them at 2am. This project lets you add your team so you can see everyone's local time at a glance, and know when it's an appropriate time to call.",
   },
