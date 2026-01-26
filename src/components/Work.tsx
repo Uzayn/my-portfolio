@@ -244,7 +244,7 @@ export default function Work() {
                 ))}
               </div>
               <a
-                href="https://drive.google.com/file/d/1o0WnINZsTvatORbabZlhTSGvHXjB_orG/view?usp=sharing"
+                href="https://drive.google.com/drive/folders/1A5lZSKVzY3kOlYUE1DviRznC-GrDBAW0?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group mt-6 flex w-full md:w-auto items-center justify-center rounded-full bg-gray-100 py-2 px-4 text-sm font-medium text-gray-900 hover:bg-gray-200 transition-colors"
