@@ -119,7 +119,8 @@ export default function Hero() {
         <p className="text-gray-500 max-w-prose font-light">
           Web, engineering, developing, commiting & everything in between.{" "}
           <br />
-          I care about creating cool web interfaces and engaging experiences
+          I care about creating perfomant web interfaces and engaging
+          experiences
           <br />
         </p>
       </div>
