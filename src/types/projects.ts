@@ -21,7 +21,7 @@ export const projects: Project[] = [
     title: "Kalendly",
     description: "Scheduling engine and booking system",
     tech: ["React","Tailwind", "Supabase", "Node + Express"],
-    link: "images/thumbnails/remotesync.png",
+    link: "https://github.com/Uzayn/Kalendly",
     image: "images/thumbnails/kalendly.png",
     story: "A Calendly clone I'm building to push myself on a larger-scale project. Scheduling logic, calendar UI, availability management, booking flows — the kind of complexity that doesn't fit in a weekend project. Still in progress.",
   },
