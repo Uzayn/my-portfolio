@@ -11,7 +11,7 @@ export const projects: Project[] = [
   {
     title: "Kalendly",
     description: "Scheduling engine and booking system",
-    tech: ["React", "date-fns", "Tailwind + Headless UI", "Zustand"],
+    tech: ["React","Tailwind", "Supabase", "Node + Express"],
     link: "https://github.com/username/project-four",
     image: "https://picsum.photos/seed/project4/400/300",
     story: "A Calendly clone I'm building to push myself on a larger-scale project. Scheduling logic, calendar UI, availability management, booking flows — the kind of complexity that doesn't fit in a weekend project. Still in progress.",
@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     title: "Remote sync",
     description: "A timezone comparison tool for remote teams",
-    tech: ["Vue.js", "Tailwind CSS", "Firebase"],
+    tech: ["Svelte", "Tailwind CSS"],
     link: "https://github.com/username/project-three",
     image: "https://picsum.photos/seed/project3/400/300",
     story: "Born from a real problem. I was on a team spread across Nigeria, Pakistan, and Bangladesh — calling teammates often meant catching them at 2am. This lets you add your team, see everyone's local time at a glance, and know when it's actually okay to call.",
@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     title: "Brandbreeks",
     description: "A project management and automations landing page",
-    tech: ["React", "Next.js", "Tailwind"],
+    tech: ["React", "Next.js", "Tailwind", "motion"],
     link: "https://brandbreeks.com",
     image: "/images/thumbnails/brandbreeks.png",
     story: "A real business I'm building with my partner. No designer on this one — I handled the frontend and made design decisions through research, studying what works in similar landing pages and adapting it to fit our brand. It's live and evolving as the business grows.",
