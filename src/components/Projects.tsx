@@ -170,7 +170,9 @@ export default function Projects() {
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                     >
-                      Visit Live Site
+                      {selectedProject.link.includes("github.com")
+                        ? "View GitHub"
+                        : "Visit Live Site"}
                     </a>
                   </div>
                   <p className="text-gray-600 mb-4 text-xs">

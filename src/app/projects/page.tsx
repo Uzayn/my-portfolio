@@ -30,7 +30,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-18 md:gap-8">
           {projects.map((project, index) => (
             <motion.article
               key={index}
