@@ -82,11 +82,9 @@ export default function About() {
   };
 
   const aboutImages = [
-    "https://picsum.photos/seed/about1/360/480",
-    "https://picsum.photos/seed/about2/360/480",
-    "https://picsum.photos/seed/about3/360/480",
-    "https://picsum.photos/seed/about4/360/480",
-    "https://picsum.photos/seed/about5/360/480",
+    "/images/about/Uzayn4.jpeg",
+    "/images/about/Uzayn.jpeg",
+    "/images/about/uzayn-work.jpeg",
   ];
 
   return (
