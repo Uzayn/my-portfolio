@@ -123,7 +123,7 @@ export default function About() {
                   />
                   , mostly in React and Next.js. I care about{" "}
                   <Expandable
-                    trigger="the little details"
+                    trigger="the littlest details"
                     detail=", things like spacing, typography, and small interactions. I think that's what makes an interface feel intentional"
                     isOpen={expanded.has("details")}
                     onToggle={() => toggle("details")}
