@@ -163,7 +163,7 @@ export default function About() {
                   , and I listen to{" "}
                   <Expandable
                     trigger="old school afrobeats"
-                    detail=", artists like Fela, King Sunny Ade, and Ebenezer Obey"
+                    detail=", 2010s Wizkid, Wande Coal"
                     isOpen={expanded.has("music")}
                     onToggle={() => toggle("music")}
                     shouldPulse={isInView}
