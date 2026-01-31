@@ -1,0 +1,10 @@
+export { default as ServicesHero } from "./ServicesHero";
+export { default as ServicesProblem } from "./ServicesProblem";
+export { default as ServicesSolution } from "./ServicesSolution";
+export { default as ServicesProcess } from "./ServicesProcess";
+export { default as ServicesPortfolio } from "./ServicesPortfolio";
+export { default as ServicesDeliverables } from "./ServicesDeliverables";
+export { default as ServicesTestimonials } from "./ServicesTestimonials";
+export { default as ServicesPricing } from "./ServicesPricing";
+export { default as ServicesFAQ } from "./ServicesFAQ";
+export { default as ServicesCTA } from "./ServicesCTA";
