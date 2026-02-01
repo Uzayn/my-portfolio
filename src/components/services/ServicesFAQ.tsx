@@ -12,6 +12,11 @@ export default function ServicesFAQ() {
 
   const faqs: FAQItem[] = [
     {
+      question: "How much does a website cost?",
+      answer:
+        "Starter websites for a simple online presence start at $800-$1,200. Professional websites for growing businesses range from $2,000-$3,000. Custom projects with e-commerce or special features are priced based on your specific requirements.",
+    },
+    {
       question: "How long does it take to build my website?",
       answer:
         "Most projects take 2-4 weeks from start to finish, depending on the size and complexity. I'll give you a clear timeline before we begin.",

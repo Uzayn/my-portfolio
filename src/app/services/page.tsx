@@ -13,6 +13,7 @@ import {
   ServicesFAQ,
   ServicesCTA,
   AuditFormSlider,
+  ServicesSEO,
 } from "@/components/services";
 
 export default function ServicesPage() {
@@ -22,39 +23,44 @@ export default function ServicesPage() {
   const closeAudit = () => setIsAuditOpen(false);
 
   return (
-    <main>
-      {/* Hero — Hook them with a clear benefit + CTA */}
-      <ServicesHero onOpenAudit={openAudit} />
+    <>
+      {/* Structured Data for SEO */}
+      <ServicesSEO />
 
-      {/* Problem — Show you understand their pain */}
-      <ServicesProblem />
+      <main>
+        {/* Hero — Hook them with a clear benefit + CTA */}
+        <ServicesHero onOpenAudit={openAudit} />
 
-      {/* Solution — Your service as the answer */}
-      <ServicesSolution />
+        {/* Problem — Show you understand their pain */}
+        <ServicesProblem />
 
-      {/* Process — 3 simple steps (Audit → Build → Launch) */}
-      <ServicesProcess onOpenAudit={openAudit} />
+        {/* Solution — Your service as the answer */}
+        <ServicesSolution />
 
-      {/* Portfolio — Before/after proof */}
-      <ServicesPortfolio />
+        {/* Process — 3 simple steps (Audit → Build → Launch) */}
+        <ServicesProcess onOpenAudit={openAudit} />
 
-      {/* What You Get — Tangible deliverables list */}
-      <ServicesDeliverables />
+        {/* Portfolio — Before/after proof */}
+        <ServicesPortfolio />
 
-      {/* Testimonials — Trust through social proof */}
-      <ServicesTestimonials />
+        {/* What You Get — Tangible deliverables list */}
+        <ServicesDeliverables />
 
-      {/* Pricing — Optional, depends on your strategy */}
-      <ServicesPricing onOpenAudit={openAudit} />
+        {/* Testimonials — Trust through social proof */}
+        <ServicesTestimonials />
 
-      {/* FAQ — Handle objections */}
-      <ServicesFAQ />
+        {/* Pricing — Optional, depends on your strategy */}
+        <ServicesPricing onOpenAudit={openAudit} />
 
-      {/* Final CTA — Close the loop */}
-      <ServicesCTA onOpenAudit={openAudit} />
+        {/* FAQ — Handle objections */}
+        <ServicesFAQ />
 
-      {/* Audit Form Slider */}
-      <AuditFormSlider isOpen={isAuditOpen} onClose={closeAudit} />
-    </main>
+        {/* Final CTA — Close the loop */}
+        <ServicesCTA onOpenAudit={openAudit} />
+
+        {/* Audit Form Slider */}
+        <AuditFormSlider isOpen={isAuditOpen} onClose={closeAudit} />
+      </main>
+    </>
   );
 }
