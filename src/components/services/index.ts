@@ -8,3 +8,4 @@ export { default as ServicesTestimonials } from "./ServicesTestimonials";
 export { default as ServicesPricing } from "./ServicesPricing";
 export { default as ServicesFAQ } from "./ServicesFAQ";
 export { default as ServicesCTA } from "./ServicesCTA";
+export { default as AuditFormSlider } from "./AuditFormSlider";

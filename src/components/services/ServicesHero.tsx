@@ -1,6 +1,10 @@
 "use client";
 
-export default function ServicesHero() {
+interface ServicesHeroProps {
+  onOpenAudit: () => void;
+}
+
+export default function ServicesHero({ onOpenAudit }: ServicesHeroProps) {
   return (
     <section id="services-hero" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-4xl mx-auto text-center">
@@ -15,12 +19,12 @@ export default function ServicesHero() {
         </p>
 
         {/* CTA Button */}
-        <a
-          href="#services-contact"
+        <button
+          onClick={onOpenAudit}
           className="inline-block px-8 py-4 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-colors"
         >
           Get Your Free Website Audit
-        </a>
+        </button>
 
         {/* Trust indicator */}
         <p className="mt-4 text-gray-500 text-sm">

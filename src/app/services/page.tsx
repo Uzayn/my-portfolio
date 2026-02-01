@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   ServicesHero,
   ServicesProblem,
@@ -9,13 +12,19 @@ import {
   ServicesPricing,
   ServicesFAQ,
   ServicesCTA,
+  AuditFormSlider,
 } from "@/components/services";
 
 export default function ServicesPage() {
+  const [isAuditOpen, setIsAuditOpen] = useState(false);
+
+  const openAudit = () => setIsAuditOpen(true);
+  const closeAudit = () => setIsAuditOpen(false);
+
   return (
     <main>
       {/* Hero — Hook them with a clear benefit + CTA */}
-      <ServicesHero />
+      <ServicesHero onOpenAudit={openAudit} />
 
       {/* Problem — Show you understand their pain */}
       <ServicesProblem />
@@ -24,7 +33,7 @@ export default function ServicesPage() {
       <ServicesSolution />
 
       {/* Process — 3 simple steps (Audit → Build → Launch) */}
-      <ServicesProcess />
+      <ServicesProcess onOpenAudit={openAudit} />
 
       {/* Portfolio — Before/after proof */}
       <ServicesPortfolio />
@@ -36,13 +45,16 @@ export default function ServicesPage() {
       <ServicesTestimonials />
 
       {/* Pricing — Optional, depends on your strategy */}
-      <ServicesPricing />
+      <ServicesPricing onOpenAudit={openAudit} />
 
       {/* FAQ — Handle objections */}
       <ServicesFAQ />
 
       {/* Final CTA — Close the loop */}
-      <ServicesCTA />
+      <ServicesCTA onOpenAudit={openAudit} />
+
+      {/* Audit Form Slider */}
+      <AuditFormSlider isOpen={isAuditOpen} onClose={closeAudit} />
     </main>
   );
 }

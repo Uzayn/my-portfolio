@@ -1,6 +1,10 @@
 "use client";
 
-export default function ServicesProcess() {
+interface ServicesProcessProps {
+  onOpenAudit: () => void;
+}
+
+export default function ServicesProcess({ onOpenAudit }: ServicesProcessProps) {
   const steps = [
     {
       number: "01",
@@ -55,12 +59,12 @@ export default function ServicesProcess() {
 
         {/* CTA Button */}
         <div className="text-center mt-12">
-          <a
-            href="#services-contact"
+          <button
+            onClick={onOpenAudit}
             className="inline-block px-8 py-4 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-colors"
           >
             Start With A Free Audit
-          </a>
+          </button>
         </div>
       </div>
     </section>

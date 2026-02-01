@@ -1,6 +1,10 @@
 "use client";
 
-export default function ServicesCTA() {
+interface ServicesCTAProps {
+  onOpenAudit: () => void;
+}
+
+export default function ServicesCTA({ onOpenAudit }: ServicesCTAProps) {
   return (
     <section id="services-contact" className="py-20 px-6 bg-gray-900">
       <div className="max-w-4xl mx-auto text-center">
@@ -14,21 +18,13 @@ export default function ServicesCTA() {
           Get a free audit and find out exactly what&apos;s holding your site back. No pressure, no commitment — just clarity.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="mailto:koleoshohuzain@gmail.com"
-            className="inline-block px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-colors"
-          >
-            Get Your Free Website Audit
-          </a>
-          <a
-            href="/"
-            className="inline-block px-8 py-4 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-colors"
-          >
-            View Developer Portfolio
-          </a>
-        </div>
+        {/* CTA Button */}
+        <button
+          onClick={onOpenAudit}
+          className="inline-block px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-colors"
+        >
+          Get Your Free Website Audit
+        </button>
 
         {/* Trust indicator */}
         <p className="mt-8 text-gray-400 text-sm">
@@ -38,21 +34,13 @@ export default function ServicesCTA() {
 
       {/* Footer */}
       <div className="max-w-4xl mx-auto mt-16 pt-8 border-t border-white/10 text-center">
-        <p className="text-white font-medium mb-2">Huzain Aliyu</p>
+        <p className="text-white font-medium mb-2">Huzain Koleosho</p>
         <a
           href="mailto:koleoshohuzain@gmail.com"
           className="text-gray-400 hover:text-white transition-colors"
         >
           koleoshohuzain@gmail.com
         </a>
-        <div className="mt-4">
-          <a
-            href="/"
-            className="text-gray-400 hover:text-white transition-colors text-sm"
-          >
-            View Developer Portfolio →
-          </a>
-        </div>
       </div>
     </section>
   );

@@ -1,5 +1,9 @@
 "use client";
 
+interface ServicesPricingProps {
+  onOpenAudit: () => void;
+}
+
 interface PricingTier {
   name: string;
   price: string;
@@ -9,7 +13,7 @@ interface PricingTier {
   ctaText: string;
 }
 
-export default function ServicesPricing() {
+export default function ServicesPricing({ onOpenAudit }: ServicesPricingProps) {
   const tiers: PricingTier[] = [
     {
       name: "Starter",
@@ -139,8 +143,8 @@ export default function ServicesPricing() {
               </ul>
 
               {/* CTA Button */}
-              <a
-                href="#services-contact"
+              <button
+                onClick={onOpenAudit}
                 className={`block w-full py-3 text-center rounded-full font-semibold transition-colors ${
                   tier.highlighted
                     ? "bg-white text-gray-900 hover:bg-gray-100"
@@ -148,7 +152,7 @@ export default function ServicesPricing() {
                 }`}
               >
                 {tier.ctaText}
-              </a>
+              </button>
             </div>
           ))}
         </div>
