@@ -1,0 +1,101 @@
+# Huzain Koleosho - Freelance Web Designer & Developer
+
+> Professional web design and development services for small businesses. I build fast, modern, mobile-friendly websites that help businesses attract customers and grow online.
+
+## About
+
+Huzain Koleosho is a freelance web designer and developer who helps small businesses get websites that actually work. Specializing in custom website design, responsive development, and SEO setup.
+
+Website: https://huzain.work
+Services: https://huzain.work/services
+Email: koleoshohuzain@gmail.com
+
+## Services Offered
+
+### Web Design & Development
+- Custom website design (not templates)
+- Mobile-responsive development
+- Fast-loading websites (under 3 seconds)
+- SEO basics setup
+- Contact forms and booking integrations
+- Post-launch support and training
+
+### Free Website Audit
+- No-cost review of existing websites
+- Identifies what's working and what's not
+- Actionable recommendations
+- No obligation
+
+## Pricing
+
+### Starter Package: $800 - $1,200
+Best for: Simple online presence
+- Up to 3 pages (Home, About, Contact)
+- Mobile-responsive design
+- Contact form
+- Basic SEO setup
+- 1 round of revisions
+- 7 days post-launch support
+
+### Professional Package: $2,000 - $3,000
+Best for: Businesses ready to grow
+- Up to 6 pages
+- Mobile-responsive design
+- Contact form + booking integration
+- Blog or news section (optional)
+- SEO setup + Google Business optimization tips
+- 2 rounds of revisions
+- 14 days post-launch support
+- Basic analytics setup
+
+### Custom Package: Contact for pricing
+Best for: Larger projects or specific needs
+- Unlimited pages
+- E-commerce functionality
+- Custom features & integrations
+- Priority support
+- Ongoing maintenance (optional)
+
+## Tech Stack
+
+- React / Next.js
+- TypeScript
+- Tailwind CSS
+- Modern frontend technologies
+- Performance-optimized builds
+
+## Frequently Asked Questions
+
+Q: How much does a website cost?
+A: Starter websites start at $800-$1,200. Professional websites range from $2,000-$3,000. Custom projects are priced based on requirements.
+
+Q: How long does it take to build a website?
+A: Most projects take 2-4 weeks from start to finish, depending on size and complexity.
+
+Q: Do you redesign existing websites?
+A: Yes. We start with an audit to see what's worth keeping and what needs improvement.
+
+Q: Will I be able to update the website myself?
+A: Yes. The site is set up for easy updates, and training is included.
+
+Q: Do you offer payment plans?
+A: Yes. Standard terms are 50% upfront, 50% on launch.
+
+## Ideal Clients
+
+- Small business owners who need a professional online presence
+- Businesses with outdated websites that need a refresh
+- Companies losing customers to competitors with better websites
+- Anyone who wants a fast, modern, mobile-friendly website
+
+## Contact
+
+To request a free website audit or discuss a project:
+- Email: koleoshohuzain@gmail.com
+- Website: https://huzain.work/services
+
+## Social
+
+- LinkedIn: https://linkedin.com/in/uzayn
+- Twitter: https://twitter.com/kolhuz
+- GitHub: https://github.com/uzayn
