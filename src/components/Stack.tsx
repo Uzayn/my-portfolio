@@ -42,9 +42,9 @@ const dailyDrivers: Technology[] = [
   { name: "React", icon: FaReact, color: "text-cyan-500" },
   { name: "Next.js", icon: SiNextdotjs, color: "text-black" },
   { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+  { name: "JavaScript", icon: FaJs, color: "text-yellow-500" },
   { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-400" },
   { name: "ShadCN", icon: SiShadcnui, color: "text-black" },
-  { name: "JavaScript", icon: FaJs, color: "text-yellow-500" },
 ];
 
 const comfortable: Technology[] = [
