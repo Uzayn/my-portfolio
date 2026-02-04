@@ -82,9 +82,9 @@ export default function About() {
   };
 
   const aboutImages = [
-    "/images/about/Uzayn4.jpeg",
     "/images/about/Uzayn.jpeg",
     "/images/about/uzayn-work.jpeg",
+    "/images/about/Uzayn4.jpeg",
   ];
 
   return (
@@ -111,63 +111,114 @@ export default function About() {
                 className="lg:w-1/2 text-gray-600 leading-relaxed"
               >
                 <p>
-                  I&apos;m a frontend engineer based in Nigeria. I&apos;ve spent
-                  the past few years{" "}
+                  I build frontends, but I don&apos;t just stop at the UI. I
+                  think about how{" "}
                   <Expandable
-                    trigger="shipping products"
-                    detail=", I led a migration from legacy PHP to Svelte at Bilin, built landing pages, and worked across different stacks"
-                    isOpen={expanded.has("shipping")}
-                    onToggle={() => toggle("shipping")}
+                    trigger="the whole system fits together"
+                    detail=" - APIs, databases, server logic. I've spent enough time on the backend to know how things should connect, and that makes the frontend work I do a lot sharper"
+                    isOpen={expanded.has("backend")}
+                    onToggle={() => toggle("backend")}
                     shouldPulse={isInView}
                     pulseDelay={0.3}
                   />
-                  , mostly in React and Next.js. I care about{" "}
+                  . The thing that keeps me up at night?{" "}
                   <Expandable
-                    trigger="the littlest details"
-                    detail=", things like spacing, typography, and small interactions. I think that's what makes an interface feel intentional"
-                    isOpen={expanded.has("details")}
-                    onToggle={() => toggle("details")}
+                    trigger="Spacing being off by 2px"
+                    detail=" - seriously. Misaligned elements, inconsistent padding, a button that doesn't sit right - these things bother me until I fix them. I can't unsee it"
+                    isOpen={expanded.has("design")}
+                    onToggle={() => toggle("design")}
                     shouldPulse={isInView}
                     pulseDelay={0.5}
-                  />
-                  . Right now, I&apos;m{" "}
-                  <Expandable
-                    trigger="building a business"
-                    detail=" with my partner called Brandbreeks. I handle the frontend and I make design calls through research"
-                    isOpen={expanded.has("business")}
-                    onToggle={() => toggle("business")}
-                    shouldPulse={isInView}
-                    pulseDelay={0.7}
                   />
                   .
                 </p>
                 <p className="mt-4">
-                  Outside of code, I love English football, and I play{" "}
+                  Hand me a Figma file and I&apos;ll{" "}
                   <Expandable
-                    trigger="FPL"
-                    detail=", I've been managing my team since 2019. Ask me about it"
-                    isOpen={expanded.has("fpl")}
-                    onToggle={() => toggle("fpl")}
+                    trigger="match it to the pixel"
+                    detail=" - that's genuinely the part I enjoy most. Translating a static design into something that moves and responds and feels real"
+                    isOpen={expanded.has("crafting")}
+                    onToggle={() => toggle("crafting")}
+                    shouldPulse={isInView}
+                    pulseDelay={0.7}
+                  />
+                  . I care about code that&apos;s{" "}
+                  <Expandable
+                    trigger="boring in the best way"
+                    detail=" - readable, predictable, easy to pick up six months later. No clever tricks, just solid work"
+                    isOpen={expanded.has("functional")}
+                    onToggle={() => toggle("functional")}
                     shouldPulse={isInView}
                     pulseDelay={0.9}
                   />
-                  , I love{" "}
+                  .
+                </p>
+                <p className="mt-4">
+                  Right now I&apos;m building{" "}
                   <Expandable
-                    trigger="tennis"
-                    detail=" and chess, though I've never learned any chess theory. I make my calculated moves and hope for the best"
-                    isOpen={expanded.has("tennis")}
-                    onToggle={() => toggle("tennis")}
+                    trigger="Brandbreeks"
+                    detail=" with my partner - I own the frontend and most of the design decisions. It's a mix of research, intuition, and a lot of iteration"
+                    isOpen={expanded.has("business")}
+                    onToggle={() => toggle("business")}
                     shouldPulse={isInView}
                     pulseDelay={1.1}
                   />
-                  , and I listen to{" "}
+                  . What I care about most is{" "}
                   <Expandable
-                    trigger="old school afrobeats"
-                    detail=", 2010s Wizkid, Wande Coal"
+                    trigger="how it feels to use something"
+                    detail=" - that split second where a user either trusts your product or bounces. I want to be on the right side of that moment"
+                    isOpen={expanded.has("emotions")}
+                    onToggle={() => toggle("emotions")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.3}
+                  />
+                  .
+                </p>
+                <p className="mt-4">
+                  Off the clock:{" "}
+                  <Expandable
+                    trigger="FPL manager since 2019"
+                    detail=" - ask me about my team."
+                    isOpen={expanded.has("fpl")}
+                    onToggle={() => toggle("fpl")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.5}
+                  />
+                  ,{" "}
+                  <Expandable
+                    trigger="English football"
+                    detail=" - GGMU, the highs and lows, the passion"
+                    isOpen={expanded.has("football")}
+                    onToggle={() => toggle("football")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.7}
+                  />
+                  ,{" "}
+                  <Expandable
+                    trigger="tennis and chess"
+                    detail=" - never studied chess theory, I just move pieces and calculate as i progress, i think it's more interesting this way"
+                    isOpen={expanded.has("tennis")}
+                    onToggle={() => toggle("tennis")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.9}
+                  />
+                  ,{" "}
+                  <Expandable
+                    trigger="scrabble"
+                    detail=" -finding a 7-letter word on a triple is peak dopamine"
+                    isOpen={expanded.has("scrabble")}
+                    onToggle={() => toggle("scrabble")}
+                    shouldPulse={isInView}
+                    pulseDelay={2.1}
+                  />
+                  , and{" "}
+                  <Expandable
+                    trigger="2010s afrobeats"
+                    detail=" -Wizkid, Wande Coal, the golden era. If you know, you know"
                     isOpen={expanded.has("music")}
                     onToggle={() => toggle("music")}
                     shouldPulse={isInView}
-                    pulseDelay={1.3}
+                    pulseDelay={2.3}
                   />
                   .
                 </p>

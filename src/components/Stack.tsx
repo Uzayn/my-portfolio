@@ -12,6 +12,7 @@ import {
   FaDocker,
   FaPhp,
   FaLaravel,
+  FaNodeJs,
 } from "react-icons/fa6";
 import {
   SiNextdotjs,
@@ -24,6 +25,10 @@ import {
   SiNeo4J,
   SiMysql,
   SiPostgresql,
+  SiSupabase,
+  SiClerk,
+  SiVite,
+  SiExpress,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -39,16 +44,20 @@ const dailyDrivers: Technology[] = [
   { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
   { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-400" },
   { name: "ShadCN", icon: SiShadcnui, color: "text-black" },
+  { name: "JavaScript", icon: FaJs, color: "text-yellow-500" },
 ];
 
 const comfortable: Technology[] = [
   { name: "Svelte", icon: SiSvelte, color: "text-orange-500" },
   { name: "Vue", icon: FaVuejs, color: "text-green-500" },
-  { name: "JavaScript", icon: FaJs, color: "text-yellow-500" },
   { name: "Sass", icon: FaSass, color: "text-pink-500" },
   { name: "Git", icon: FaGitAlt, color: "text-red-500" },
   { name: "GitHub", icon: FaGithub, color: "text-gray-800" },
   { name: "Figma", icon: FaFigma, color: "text-purple-500" },
+  { name: "Node.js", icon: FaNodeJs, color: "text-green-600" },
+  { name: "Express", icon: SiExpress, color: "text-gray-800" },
+  { name: "Vite", icon: SiVite, color: "text-purple-500" },
+  { name: "Supabase", icon: SiSupabase, color: "text-emerald-500" },
 ];
 
 const workedWith: Technology[] = [
@@ -62,6 +71,7 @@ const workedWith: Technology[] = [
   { name: "MySQL", icon: SiMysql, color: "text-blue-600" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
   { name: "Framer", icon: SiFramer, color: "text-blue-600" },
+  { name: "Clerk", icon: SiClerk, color: "text-purple-600" },
 ];
 
 function TechGroup({

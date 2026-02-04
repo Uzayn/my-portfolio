@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Huzain Koleosho",
   },
   description:
-    "Frontend engineer based in Nigeria. Building products, shipping code, and paying attention to the details.",
+    "Frontend engineer. Building products, shipping code, and paying attention to the details.",
   metadataBase: new URL(siteUrl),
   authors: [{ name: "Huzain Koleosho", url: siteUrl }],
   creator: "Huzain Koleosho",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Huzain Koleosho",
     title: "Huzain Koleosho | Frontend Engineer",
     description:
-      "Frontend engineer based in Nigeria. Building products, shipping code, and paying attention to the details.",
+      "Frontend engineer. Building products, shipping code, and paying attention to the details.",
     images: [
       {
         url: "/og-image.png",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Huzain Koleosho | Frontend Engineer",
     description:
-      "Frontend engineer based in Nigeria. Building products, shipping code, and paying attention to the details.",
+      "Frontend engineer. Building products, shipping code, and paying attention to the details.",
     creator: "@kolhuz",
     images: ["/og-image.png"],
   },
