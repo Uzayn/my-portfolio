@@ -31,3 +31,17 @@ body {
 .animate-fade-in {
   animation: fade-in 0.3s ease-out;
 }
+
+@keyframes shine-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent) brightness(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 5px currentColor) brightness(1.15);
+  }
+}
+
+.animate-shine {
+  animation: shine-glow 2.8s ease-in-out infinite;
+}

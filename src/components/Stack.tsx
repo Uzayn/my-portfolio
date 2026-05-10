@@ -29,6 +29,8 @@ import {
   SiClerk,
   SiVite,
   SiExpress,
+  SiClaude,
+  SiOpenai,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -36,6 +38,7 @@ interface Technology {
   name: string;
   icon: IconType;
   color: string;
+  shine?: boolean;
 }
 
 const dailyDrivers: Technology[] = [
@@ -45,6 +48,8 @@ const dailyDrivers: Technology[] = [
   { name: "JavaScript", icon: FaJs, color: "text-yellow-500" },
   { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-400" },
   { name: "ShadCN", icon: SiShadcnui, color: "text-black" },
+  { name: "Claude", icon: SiClaude, color: "text-orange-600", shine: true },
+  { name: "Codex", icon: SiOpenai, color: "text-black", shine: true },
 ];
 
 const comfortable: Technology[] = [
@@ -92,7 +97,11 @@ function TechGroup({
           return (
             <div key={index} className="flex flex-col items-center gap-1.5">
               <div className="size-7 md:size-8">
-                <Icon className={`w-full h-full ${tech.color}`} />
+                <Icon
+                  className={`w-full h-full ${tech.color} ${
+                    tech.shine ? "animate-shine" : ""
+                  }`}
+                />
               </div>
               <span className="text-xs text-gray-500 text-center">
                 {tech.name}

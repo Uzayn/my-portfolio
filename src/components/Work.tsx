@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBriefcase, FaChevronDown, FaArrowUpRightFromSquare } from "react-icons/fa6";
+import {
+  FaBriefcase,
+  FaChevronDown,
+  FaArrowUpRightFromSquare,
+} from "react-icons/fa6";
 import Image from "next/image";
 
 interface WorkExperience {
@@ -20,17 +24,38 @@ interface WorkExperience {
   collaborators?: { name: string; url: string }[]; // Optional: List of collaborators with URLs
 }
 
+function getLastMonthEnd() {
+  const lastMonth = new Date();
+  lastMonth.setDate(1);
+  lastMonth.setMonth(lastMonth.getMonth() - 1);
+  const label = lastMonth.toLocaleString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
+  return { label, dateTime: String(lastMonth.getFullYear()) };
+}
+
 const workExperience: WorkExperience[] = [
+  {
+    company: "DWay Pay",
+    title: "Frontend Engineer",
+    location: "Nigeria",
+    logo: "/images/companies/dway.png",
+    start: "Apr 2026",
+    end: {
+      label: "Present",
+      dateTime: "2026",
+    },
+    details: "Vue, Typescript, Tailwind CSS, Postman, Figma",
+    description: [],
+  },
   {
     company: "Bilin",
     title: "Frontend Engineer",
     location: "Germany",
     logo: "/images/companies/bilin.png",
     start: "Aug 2023",
-    end: {
-      label: "Dec 2025",
-      dateTime: "2025",
-    },
+    end: getLastMonthEnd(),
     details:
       "Svelte, TypeScript, Tailwind CSS, ShadCN UI, Laravel, PHP, Sass, Inertia.js, Docker, Redis, Neo4j",
     description: [
@@ -66,7 +91,7 @@ const workExperience: WorkExperience[] = [
   },
   {
     company: "Grow",
-    title: "Frontend developer",
+    title: "Frontend developer (Intern)",
     location: "Nigeria",
     logo: "/images/companies/grow.png",
     start: "Oct 2022",
@@ -110,7 +135,7 @@ function AccordionItem({
             <Image
               src={role.logo}
               alt={`${role.company} logo`}
-              className={`h-7 w-7 rounded-full object-cover ${
+              className={`h-fit w-fit p-1 rounded-full object-cover ${
                 role.company === "Grow" ? "scale-65" : ""
               }`}
               width={28}
@@ -253,7 +278,7 @@ export default function Work() {
                 <FaArrowUpRightFromSquare className="ml-2 h-3 w-3" />
               </a>
               <p className="mt-3 text-xs text-gray-500 text-center">
-                Last updated: December 2025
+                Last updated: May 2026
               </p>
             </div>
           </div>

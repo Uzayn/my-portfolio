@@ -154,14 +154,23 @@ export default function About() {
                   .
                 </p>
                 <p className="mt-4">
-                  Right now I&apos;m building{" "}
+                  AI-augmented — I use Claude Code and Codex{" "}
+                  <Expandable
+                    trigger="every day"
+                    detail=" - they handle a lot of my planning, coding, and debugging now, more than I do manually these days"
+                    isOpen={expanded.has("ai")}
+                    onToggle={() => toggle("ai")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.1}
+                  />
+                  . Right now I&apos;m building{" "}
                   <Expandable
                     trigger="Brandbreeks"
                     detail=" with my partner - I own the frontend and most of the design decisions. It's a mix of research, intuition, and a lot of iteration"
                     isOpen={expanded.has("business")}
                     onToggle={() => toggle("business")}
                     shouldPulse={isInView}
-                    pulseDelay={1.1}
+                    pulseDelay={1.3}
                   />
                   . What I care about most is{" "}
                   <Expandable
@@ -170,7 +179,7 @@ export default function About() {
                     isOpen={expanded.has("emotions")}
                     onToggle={() => toggle("emotions")}
                     shouldPulse={isInView}
-                    pulseDelay={1.3}
+                    pulseDelay={1.5}
                   />
                   .
                 </p>
@@ -182,7 +191,7 @@ export default function About() {
                     isOpen={expanded.has("fpl")}
                     onToggle={() => toggle("fpl")}
                     shouldPulse={isInView}
-                    pulseDelay={1.5}
+                    pulseDelay={1.7}
                   />
                   ,{" "}
                   <Expandable
@@ -191,7 +200,7 @@ export default function About() {
                     isOpen={expanded.has("football")}
                     onToggle={() => toggle("football")}
                     shouldPulse={isInView}
-                    pulseDelay={1.7}
+                    pulseDelay={1.9}
                   />
                   ,{" "}
                   <Expandable
@@ -200,7 +209,7 @@ export default function About() {
                     isOpen={expanded.has("tennis")}
                     onToggle={() => toggle("tennis")}
                     shouldPulse={isInView}
-                    pulseDelay={1.9}
+                    pulseDelay={2.1}
                   />
                   ,{" "}
                   <Expandable
@@ -209,7 +218,7 @@ export default function About() {
                     isOpen={expanded.has("scrabble")}
                     onToggle={() => toggle("scrabble")}
                     shouldPulse={isInView}
-                    pulseDelay={2.1}
+                    pulseDelay={2.3}
                   />
                   , and{" "}
                   <Expandable
@@ -218,7 +227,7 @@ export default function About() {
                     isOpen={expanded.has("music")}
                     onToggle={() => toggle("music")}
                     shouldPulse={isInView}
-                    pulseDelay={2.3}
+                    pulseDelay={2.5}
                   />
                   .
                 </p>
