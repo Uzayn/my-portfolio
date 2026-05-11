@@ -37,7 +37,7 @@ function getLastMonthEnd() {
 
 const workExperience: WorkExperience[] = [
   {
-    company: "DWay Pay",
+    company: "DW Pay",
     title: "Frontend Engineer",
     location: "Nigeria",
     logo: "/images/companies/dway.png",
