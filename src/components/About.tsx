@@ -167,29 +167,11 @@ export default function About() {
                   in its first few seconds of use.
                 </p>
                 <p className="mt-4">
-                  I work with Claude Code and Codex{" "}
-                  <Expandable
-                    trigger="daily"
-                    detail="they produce much of the first draft, while my time goes into deciding what to build, reviewing carefully, and verifying the result end to end"
-                    isOpen={expanded.has("ai")}
-                    onToggle={() => toggle("ai")}
-                    shouldPulse={isInView}
-                    pulseDelay={1.3}
-                  />
-                  . Outside work I&apos;m building{" "}
-                  <Expandable
-                    trigger="Brandbreeks"
-                    detail="with my partner, owning the frontend and most of the design decisions"
-                    isOpen={expanded.has("business")}
-                    onToggle={() => toggle("business")}
-                    shouldPulse={isInView}
-                    pulseDelay={1.5}
-                  />
-                  .
+                  I use AI like Claude Code and Codex to plan, review, and
+                  generally get things done faster.
                 </p>
                 <p className="mt-4">
-                  Off the clock: Fantasy Premier League since 2019, Manchester
-                  United, tennis, chess, and scrabble.
+                  Away from the keyboard: FPL since 2019, Formula 1, and chess.
                 </p>
                 <AnimatePresence>
                   {expanded.size > 0 && (
