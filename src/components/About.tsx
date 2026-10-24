@@ -168,10 +168,46 @@ export default function About() {
                 </p>
                 <p className="mt-4">
                   I use AI like Claude Code and Codex to plan, review, and
-                  generally get things done faster.
+                  generally{" "}
+                  <Expandable
+                    trigger="get things done faster"
+                    detail="they produce much of the first draft, while my time goes into deciding what to build, reviewing carefully, and verifying the result end to end"
+                    isOpen={expanded.has("ai")}
+                    onToggle={() => toggle("ai")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.3}
+                  />
+                  .
                 </p>
                 <p className="mt-4">
-                  Away from the keyboard: FPL since 2019, Formula 1, and chess.
+                  Away from the keyboard:{" "}
+                  <Expandable
+                    trigger="FPL since 2019"
+                    detail="ask me about my team"
+                    isOpen={expanded.has("fpl")}
+                    onToggle={() => toggle("fpl")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.5}
+                  />
+                  ,{" "}
+                  <Expandable
+                    trigger="Formula 1"
+                    detail="the strategy as much as the racing"
+                    isOpen={expanded.has("f1")}
+                    onToggle={() => toggle("f1")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.7}
+                  />
+                  , and{" "}
+                  <Expandable
+                    trigger="chess"
+                    detail="no opening theory, just calculating over the board"
+                    isOpen={expanded.has("chess")}
+                    onToggle={() => toggle("chess")}
+                    shouldPulse={isInView}
+                    pulseDelay={1.9}
+                  />
+                  .
                 </p>
                 <AnimatePresence>
                   {expanded.size > 0 && (
