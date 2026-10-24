@@ -1,104 +1,13 @@
 "use client";
 
+import { FaArrowDown, FaEnvelope } from "react-icons/fa6";
+
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="pt-44 md:pt-32 pb-24 md:min-h-screen flex items-center relative overflow-hidden"
-    >
-      <svg
-        className="absolute top-1/4 right-0 w-1/2 h-1/2 md:w-1/3 md:h-2/3 opacity-70"
-        viewBox="0 0 400 400"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="4"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="100"
-          cy="80"
-          r="6"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="150"
-          cy="30"
-          r="3"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="200"
-          cy="100"
-          r="5"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="250"
-          cy="60"
-          r="4"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="300"
-          cy="120"
-          r="7"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="350"
-          cy="40"
-          r="3"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="80"
-          cy="150"
-          r="5"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="130"
-          cy="200"
-          r="4"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="180"
-          cy="250"
-          r="6"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="230"
-          cy="300"
-          r="3"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-        <circle
-          cx="280"
-          cy="350"
-          r="5"
-          fill="currentColor"
-          className="text-gray-300"
-        />
-      </svg>
-
-      <div className="max-w-4xl mx-auto md:mx-0 md:ml-[10%] lg:ml-[15%] px-6 md:px-12 text-left space-y-6 z-10">
+    <section id="hero" className="pt-40 pb-20 md:pt-52 md:pb-28">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 space-y-6">
         <h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter leading-none"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter leading-none"
           style={{
             background: "linear-gradient(90deg, #000000 0%, #434343 100%)",
             WebkitBackgroundClip: "text",
@@ -116,20 +25,28 @@ export default function Hero() {
 
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0" />
 
-        <p className="text-gray-500 max-w-prose font-light">
-          Web, engineering, developing, committing & everything in between.{" "}
-          <br />
-          I care about creating performant web interfaces and engaging
-          experiences
-          <br />
+        <p className="max-w-prose text-gray-600">
+          Building fintech at DW Pay and AI products at Bilin. I care about
+          fast, precise interfaces and the systems behind them.
         </p>
-      </div>
 
-      {/* <div className="absolute bottom-8 right-8 md:right-12">
-        <p className="text-sm md:text-base font-medium tracking-wide text-gray-600">
-          I build, this is proof
-        </p>
-      </div> */}
+        <div className="flex flex-wrap gap-3 pt-2">
+          <a
+            href="#work"
+            className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
+          >
+            See work
+            <FaArrowDown className="h-3 w-3" />
+          </a>
+          <a
+            href="mailto:koleoshohuzain@gmail.com"
+            className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
+          >
+            <FaEnvelope className="h-3.5 w-3.5" />
+            Email me
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
