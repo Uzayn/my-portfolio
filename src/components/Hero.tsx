@@ -1,6 +1,6 @@
 "use client";
 
-import { FaArrowDown, FaEnvelope } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa6";
 
 export default function Hero() {
   return (
@@ -31,13 +31,6 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-wrap gap-3 pt-2">
-          <a
-            href="#work"
-            className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
-          >
-            See work
-            <FaArrowDown className="h-3 w-3" />
-          </a>
           <a
             href="mailto:koleoshohuzain@gmail.com"
             className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
