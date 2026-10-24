@@ -47,7 +47,7 @@ export default function Projects() {
   }, []);
 
   const renderProjectCard = (project: Project, index: number) => (
-    <motion.article
+    <motion.div
       key={index}
       layoutId={`project-${index}`}
       role="button"
@@ -59,37 +59,45 @@ export default function Projects() {
           handleProjectClick(project, index);
         }
       }}
-      className="group cursor-pointer overflow-hidden rounded-xl border border-gray-200 bg-white transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
-      whileHover={{ y: -2 }}
+      className="relative w-full h-64 overflow-hidden transition-shadow cursor-pointer rounded-xl bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
+      whileHover={{ scale: 1.02 }}
       transition={{ type: "spring", stiffness: 200, damping: 25 }}
     >
       <motion.div
+        className="absolute top-0 right-0 w-3/4 h-48 overflow-hidden"
         layoutId={`image-${index}`}
-        className="aspect-video overflow-hidden bg-gray-100"
       >
-        <img
-          src={project.image}
-          alt={project.title}
-          className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
-          loading="lazy"
-        />
-      </motion.div>
-
-      <motion.div layoutId={`details-${index}`} className="p-4">
-        <h3 className="text-base font-medium text-gray-900">{project.title}</h3>
-        <p className="mt-1 text-sm text-gray-600">{project.description}</p>
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {project.tech.map((tech, techIndex) => (
-            <span
-              key={techIndex}
-              className="rounded bg-gray-100 px-1.5 py-0.5 text-xs text-gray-700"
-            >
-              {tech}
-            </span>
-          ))}
+        <div className="relative w-full h-full">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover rounded-t-xl border-0"
+            loading="lazy"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/95 to-transparent" />
         </div>
       </motion.div>
-    </motion.article>
+
+      <motion.div
+        className="absolute bottom-0 left-0 w-3/4 p-4 flex flex-col justify-between"
+        layoutId={`details-${index}`}
+      >
+        <div>
+          <h3 className="text-base font-semibold mb-2">{project.title}</h3>
+          <p className="text-gray-600 mb-3 text-xs">{project.description}</p>
+          <div className="flex flex-wrap gap-1 mb-3">
+            {project.tech.map((tech, techIndex) => (
+              <span
+                key={techIndex}
+                className="text-xs bg-gray-100 text-gray-700 px-1.5 py-0.5 rounded"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 
   return (
@@ -109,14 +117,14 @@ export default function Projects() {
 
           {/* Right column - Grid */}
           <div className="md:w-2/3 lg:w-3/4">
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {projects.map((project, index) =>
                 renderProjectCard(project, index),
               )}
-              <div className="mt-2 flex justify-center sm:col-span-2">
+              <div className="flex justify-center mt-4 lg:col-span-2">
                 <a
                   href="/projects"
-                  className="flex items-center space-x-1 text-sm text-blue-600 hover:text-blue-800"
+                  className="text-sm text-blue-600 hover:text-blue-800 flex items-center space-x-1"
                 >
                   <span>See all</span>
                   <FaArrowRight className="text-xs" />
@@ -175,7 +183,7 @@ export default function Projects() {
                         : "Visit Live Site"}
                     </a>
                   </div>
-                  <p className="text-gray-600 mb-4 text-sm">
+                  <p className="text-gray-600 mb-4 text-xs">
                     {selectedProject.description}
                   </p>
                   <div className="flex flex-wrap gap-1 mb-6">
