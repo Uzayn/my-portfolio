@@ -46,24 +46,35 @@ const workExperience: WorkExperience[] = [
       label: "Present",
       dateTime: "2026",
     },
-    details: "Vue, Typescript, Tailwind CSS, Postman, Figma",
-    description: [],
+    details:
+      "Vue 3, TypeScript, Tailwind CSS, Pinia, TanStack Query, Zod, Vite, Vitest, GitHub Actions, Postman, Figma",
+    description: [
+      "Sole frontend engineer on Paybanc, DW Pay's business banking platform. Took the merchant app from an empty scaffold to production at paybanc.ng in under two months: onboarding and KYC, dashboard, inward collections, payouts, virtual accounts, beneficiaries, statements, developer settings and webhooks, notifications, profile.",
+      "Designed the frontend architecture: feature-sliced Vue 3 + TypeScript, a typed axios → zod → TanStack Query layer so the UI never sees a raw API or validation error, Pinia reserved for client state, lazy layout-based routing, and env validated at boot.",
+      "Translated the Figma brand guide into Tailwind v4 CSS-first design tokens with light and dark themes, so Figma variable names map 1:1 to utilities.",
+      "Shipped the security and money-movement flows: TOTP two-factor auth with enforced enrollment, transaction PIN, sandbox/production switcher, Apple Pay and Google Pay collections, Send-to-Card wizard, currency wallets, ledger and transaction statements with CSV export.",
+      "Built the Paybanc Operations Console (control.paybanc.ng) and extracted it into its own repo: business directory, KYC and compliance review, transaction and payout oversight, per-business charges and fees, revenue, audit logs, admin users, and interactive dashboard charts with unit tests.",
+      "Own CI/CD for both apps: GitHub Actions staging and production pipelines with least-privilege tokens and npm supply-chain hardening (npm ci --ignore-scripts, release-age cooldown).",
+    ],
   },
   {
     company: "Bilin",
-    title: "Frontend Engineer",
+    title: "Full-stack Engineer",
     location: "Germany",
     logo: "/images/companies/bilin.png",
     start: "Aug 2023",
     end: getLastMonthEnd(),
     details:
-      "Svelte, TypeScript, Tailwind CSS, ShadCN UI, Laravel, PHP, Sass, Inertia.js, Docker, Redis, Neo4j",
+      "Next.js, React, TypeScript, Tailwind CSS, Jotai, TanStack Query, Radix UI, next-intl, Electron, Hono, Prisma, PostgreSQL, Bun, Turborepo, Svelte, Laravel, PHP, Inertia.js, Docker, Redis, Neo4j",
     description: [
-      "Started with legacy PHP, Laravel Blade, and Bootstrap codebase; led migration to modern Svelte frontend for improved performance and maintainability.",
-      "Integrated Inertia.js to connect PHP backend with Svelte, enabling seamless server-side rendering.",
-      "Converted all Bootstrap styles to Tailwind CSS and refactored Laravel components into Svelte for cleaner, more modular code.",
-      "Implemented new features using ShadCN UI components, enhancing user experience and accessibility.",
-      "Developed a custom video player using Vidstack to meet specific product requirements, ensuring seamless integration and enhanced user engagement.",
+      "Core engineer on WonderCall, Bilin's AI calling and office platform: a Turborepo monorepo with a Next.js 16 dashboard, an Electron desktop app, a Hono API on Kubernetes, and a fleet of workers. Over 1,500 commits and 250+ merged PRs across web, API, desktop and shared packages in 2026.",
+      "Localized the whole product into six languages (English, German, Spanish, French, Italian, Russian): built the i18n foundation on next-intl, locale routing, the language switcher, and worked screen by screen through the dashboard, desktop app, emails and toasts, with CI checks that fail on missing keys.",
+      "Built document editing in the browser and on desktop on top of BetterOffice (Rust/WASM OOXML engines): .docx, .xlsx and .pptx previews and edits, AI-agent edits with a review inbox and full-page review, spreadsheet agent edits, and task-chat attachment editing.",
+      "Designed the permissions layer: a central admin permissions matrix enforced in the API, then visible permission gates across campaigns, spaces, tasks, files, integrations, media and members that explain why an action is blocked instead of hiding it.",
+      "Led the pre-release security and compliance push: sign-in and OTP throttling, PII and secret redaction in logs, signed OAuth state, SSRF and parser RCE/DoS fixes, HIPAA recording playback, EU data-residency checks, DSAR field-level export and account erasure, cookie and sub-processor audits.",
+      "Built the shared inbox: personal and department inboxes, AI replies that pause when a person takes over, and LLM-based routing of new conversations to the right department with an evaluation set and threshold report.",
+      "Brought the Electron desktop app to parity with the web app (sidebar, review, document editing) and fixed its Windows build, macOS signing and native-module packaging in CI.",
+      "Earlier: led the migration of the legacy PHP, Laravel Blade and Bootstrap codebase to Svelte via Inertia.js, converted all styling to Tailwind CSS, introduced ShadCN UI, and built a custom Vidstack video player.",
     ],
     collaborators: [
       { name: "Elia Hilse", url: "https://elia.vc/" },
@@ -278,7 +289,7 @@ export default function Work() {
                 <FaArrowUpRightFromSquare className="ml-2 h-3 w-3" />
               </a>
               <p className="mt-3 text-xs text-gray-500 text-center">
-                Last updated: May 2026
+                Last updated: Oct 2026
               </p>
             </div>
           </div>

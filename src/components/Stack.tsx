@@ -31,6 +31,13 @@ import {
   SiExpress,
   SiClaude,
   SiOpenai,
+  SiElectron,
+  SiZod,
+  SiVitest,
+  SiReactquery,
+  SiHono,
+  SiPrisma,
+  SiBun,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -44,6 +51,7 @@ interface Technology {
 const dailyDrivers: Technology[] = [
   { name: "React", icon: FaReact, color: "text-cyan-500" },
   { name: "Next.js", icon: SiNextdotjs, color: "text-black" },
+  { name: "Vue", icon: FaVuejs, color: "text-green-500" },
   { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
   { name: "JavaScript", icon: FaJs, color: "text-yellow-500" },
   { name: "Tailwind", icon: SiTailwindcss, color: "text-cyan-400" },
@@ -54,7 +62,6 @@ const dailyDrivers: Technology[] = [
 
 const comfortable: Technology[] = [
   { name: "Svelte", icon: SiSvelte, color: "text-orange-500" },
-  { name: "Vue", icon: FaVuejs, color: "text-green-500" },
   { name: "Sass", icon: FaSass, color: "text-pink-500" },
   { name: "Git", icon: FaGitAlt, color: "text-red-500" },
   { name: "GitHub", icon: FaGithub, color: "text-gray-800" },
@@ -62,6 +69,10 @@ const comfortable: Technology[] = [
   { name: "Node.js", icon: FaNodeJs, color: "text-green-600" },
   { name: "Express", icon: SiExpress, color: "text-gray-800" },
   { name: "Vite", icon: SiVite, color: "text-purple-500" },
+  { name: "TanStack Query", icon: SiReactquery, color: "text-red-500" },
+  { name: "Zod", icon: SiZod, color: "text-blue-600" },
+  { name: "Vitest", icon: SiVitest, color: "text-yellow-500" },
+  { name: "Electron", icon: SiElectron, color: "text-cyan-600" },
   { name: "Supabase", icon: SiSupabase, color: "text-emerald-500" },
 ];
 
@@ -77,6 +88,9 @@ const workedWith: Technology[] = [
   { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
   { name: "Framer", icon: SiFramer, color: "text-blue-600" },
   { name: "Clerk", icon: SiClerk, color: "text-purple-600" },
+  { name: "Hono", icon: SiHono, color: "text-orange-500" },
+  { name: "Prisma", icon: SiPrisma, color: "text-gray-800" },
+  { name: "Bun", icon: SiBun, color: "text-gray-800" },
 ];
 
 function TechGroup({
