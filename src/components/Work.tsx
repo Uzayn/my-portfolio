@@ -137,7 +137,7 @@ function AccordionItem({
     >
       <button
         onClick={onClick}
-        className="flex w-full items-center py-4 text-left pr-8 focus:outline-none"
+        className="flex w-full items-center rounded-lg py-4 pr-8 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
         aria-expanded={isOpen}
         aria-controls={`accordion-content-${role.company}`}
       >
@@ -180,7 +180,7 @@ function AccordionItem({
       </button>
       <motion.button
         onClick={onClick}
-        className={`absolute top-6 right-4 h-4 w-4 text-gray-500 transition-transform ${
+        className={`absolute top-6 right-4 h-4 w-4 rounded text-gray-500 transition-transform focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 ${
           isOpen ? "rotate-180" : ""
         }`}
         whileHover={{ scale: 1.1 }}

@@ -244,7 +244,7 @@ export default function Navigation() {
                 key={item.id}
                 layout
                 onClick={() => scrollToSection(item.id)}
-                className={`relative z-10 flex items-center px-2 sm:px-3 py-2 rounded-lg transition-colors duration-300 ${
+                className={`relative z-10 flex items-center px-2 sm:px-3 py-2 rounded-lg transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300 ${
                   activeSection === item.id
                     ? "text-black"
                     : "text-gray-500 hover:text-black"
