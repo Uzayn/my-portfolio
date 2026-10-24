@@ -135,10 +135,10 @@ export default function Stack() {
         <div className="flex flex-col md:flex-row md:gap-12 lg:gap-16">
           {/* Left column - Title */}
           <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:sticky md:top-24 md:self-start">
-            <div className="flex items-center space-x-2">
-              <FaLayerGroup className="text-sm" />
+            <h2 className="flex items-center gap-2 text-lg font-medium text-gray-900">
+              <FaLayerGroup className="text-base" />
               <span>Tech Stack</span>
-            </div>
+            </h2>
             <p className="mt-3 text-sm text-gray-500 hidden md:block">
               Tools and technologies I work with.
             </p>

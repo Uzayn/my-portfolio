@@ -97,10 +97,10 @@ export default function About() {
         <div className="flex flex-col md:flex-row md:gap-12 lg:gap-16">
           {/* Left column - Title */}
           <div className="md:w-1/3 lg:w-1/4 mb-6 md:mb-0 md:sticky md:top-24 md:self-start">
-            <div className="flex items-center space-x-2">
-              <FaUser className="text-sm" />
+            <h2 className="flex items-center gap-2 text-lg font-medium text-gray-900">
+              <FaUser className="text-base" />
               <span>About</span>
-            </div>
+            </h2>
             <p className="mt-3 text-sm text-gray-500 hidden md:block">
               A bit more about me.
             </p>
