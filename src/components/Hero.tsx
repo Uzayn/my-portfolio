@@ -117,9 +117,9 @@ export default function Hero() {
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0" />
 
         <p className="text-gray-500 max-w-prose font-light">
-          Web, engineering, developing, commiting & everything in between.{" "}
+          Web, engineering, developing, committing & everything in between.{" "}
           <br />
-          I care about creating perfomant web interfaces and engaging
+          I care about creating performant web interfaces and engaging
           experiences
           <br />
         </p>
