@@ -115,7 +115,7 @@ function TechGroup({
                   className={`h-full w-full transition-all duration-300 ${tech.color} ${
                     tech.shine
                       ? "animate-shine"
-                      : "opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0"
+                      : ""
                   }`}
                 />
               </div>
