@@ -26,10 +26,10 @@ export default function Hero() {
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0" />
 
         <p className="max-w-prose text-gray-600">
-          Web, engineering, developing, committing &amp; everything in between.
+          Figma to production &amp; everything in between.
           <br />
-          I care about creating performant web interfaces and engaging
-          experiences.
+          I care about web interfaces that are fast, precise, and a pleasure
+          to use.
         </p>
 
         <div className="flex flex-wrap gap-3 pt-2">
