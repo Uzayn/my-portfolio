@@ -59,7 +59,7 @@ Best for: Larger projects or specific needs
 ## Experience
 
 - DW Pay (Apr 2026 - present), Frontend Engineer: sole frontend engineer on Paybanc, a business banking platform (paybanc.ng). Built the merchant app and the operations console (control.paybanc.ng) in Vue 3, TypeScript, Tailwind CSS, Pinia and TanStack Query: onboarding and KYC, payouts, statements, virtual accounts, two-factor auth, charges and audit logs, plus the GitHub Actions CI/CD.
-- Bilin (Aug 2023 - 2026), Full-stack Engineer: core engineer on WonderCall, an AI calling and office platform (Next.js, React, TypeScript, Electron, Hono, Prisma, PostgreSQL). Localized the product into six languages, built document editing on BetterOffice, a permissions system with visible gates, a shared inbox with AI routing, and led a pre-release security and compliance push. Earlier led the migration of a Laravel Blade app to Svelte with Inertia.js and Tailwind CSS.
+- Bilin (Aug 2023 - 2026), Full-stack Engineer: core engineer on WonderCall, an AI calling and office platform (Next.js, React, TypeScript, Electron, Hono, Prisma, PostgreSQL). Localized the product into six languages, built document editing on BetterOffice, a permissions system with visible gates, a shared inbox with AI routing, and led a pre-release security and compliance push. From 2023 to early 2026, on a separate Bilin product, led the migration of a Laravel Blade app to Svelte with Inertia.js and Tailwind CSS.
 - Inspectorama (Dec 2022 - Feb 2023), Frontend Developer: translated Figma designs into responsive Vue.js and Sass.
 - Grow (Oct 2022 - May 2023), Frontend Developer (Intern): built the app from scratch in React, then migrated it to Next.js with an in-app blog.
 

@@ -67,14 +67,14 @@ const workExperience: WorkExperience[] = [
     details:
       "Next.js, React, TypeScript, Tailwind CSS, Jotai, TanStack Query, Radix UI, next-intl, Electron, Hono, Prisma, PostgreSQL, Bun, Turborepo, Svelte, Laravel, PHP, Inertia.js, Docker, Redis, Neo4j",
     description: [
-      "Core engineer on WonderCall, Bilin's AI calling and office platform: a Turborepo monorepo with a Next.js 16 dashboard, an Electron desktop app, a Hono API on Kubernetes, and a fleet of workers. Over 1,500 commits and 250+ merged PRs across web, API, desktop and shared packages in 2026.",
+      "Since early 2026, core engineer on WonderCall, Bilin's AI calling and office platform: a Turborepo monorepo with a Next.js 16 dashboard, an Electron desktop app, a Hono API on Kubernetes, and a fleet of workers. Over 1,500 commits and 250+ merged PRs across web, API, desktop and shared packages in 2026.",
       "Localized the whole product into six languages (English, German, Spanish, French, Italian, Russian): built the i18n foundation on next-intl, locale routing, the language switcher, and worked screen by screen through the dashboard, desktop app, emails and toasts, with CI checks that fail on missing keys.",
       "Built document editing in the browser and on desktop on top of BetterOffice (Rust/WASM OOXML engines): .docx, .xlsx and .pptx previews and edits, AI-agent edits with a review inbox and full-page review, spreadsheet agent edits, and task-chat attachment editing.",
       "Designed the permissions layer: a central admin permissions matrix enforced in the API, then visible permission gates across campaigns, spaces, tasks, files, integrations, media and members that explain why an action is blocked instead of hiding it.",
       "Led the pre-release security and compliance push: sign-in and OTP throttling, PII and secret redaction in logs, signed OAuth state, SSRF and parser RCE/DoS fixes, HIPAA recording playback, EU data-residency checks, DSAR field-level export and account erasure, cookie and sub-processor audits.",
       "Built the shared inbox: personal and department inboxes, AI replies that pause when a person takes over, and LLM-based routing of new conversations to the right department with an evaluation set and threshold report.",
       "Brought the Electron desktop app to parity with the web app (sidebar, review, document editing) and fixed its Windows build, macOS signing and native-module packaging in CI.",
-      "Earlier: led the migration of the legacy PHP, Laravel Blade and Bootstrap codebase to Svelte via Inertia.js, converted all styling to Tailwind CSS, introduced ShadCN UI, and built a custom Vidstack video player.",
+      "Before that (2023 to early 2026), on a separate Bilin product: led the migration of its legacy PHP, Laravel Blade and Bootstrap codebase to Svelte via Inertia.js, converted all styling to Tailwind CSS, introduced ShadCN UI, and built a custom Vidstack video player.",
     ],
     collaborators: [
       { name: "Elia Hilse", url: "https://elia.vc/" },
