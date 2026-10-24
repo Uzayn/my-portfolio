@@ -26,8 +26,8 @@ export default function Hero() {
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0" />
 
         <p className="max-w-prose text-gray-600">
-          Currently building business banking at DW Pay. I care about fast,
-          precise interfaces and the systems behind them.
+          Fintech dashboards, AI products, document editing in the browser, a
+          product in six languages. Everything below is the proof.
         </p>
 
         <div className="flex flex-wrap gap-3 pt-2">
