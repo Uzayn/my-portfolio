@@ -8,6 +8,7 @@ import {
   FaFolderOpen,
   FaLayerGroup,
   FaUser,
+  FaEnvelope,
 } from "react-icons/fa6";
 
 interface NavItem {
@@ -41,6 +42,11 @@ const navItems: NavItem[] = [
     id: "about",
     icon: <FaUser size={20} />,
     label: "About",
+  },
+  {
+    id: "contact",
+    icon: <FaEnvelope size={20} />,
+    label: "Contact",
   },
 ];
 
@@ -127,6 +133,16 @@ export default function Navigation() {
       if (isProgrammaticScroll) return;
 
       const scrollPosition = window.scrollY + 150;
+
+      // The last section may be too short to scroll past the threshold,
+      // so reaching the bottom of the page counts as being in it.
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 2;
+      if (atBottom) {
+        setActiveSection(sections[sections.length - 1]);
+        return;
+      }
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
