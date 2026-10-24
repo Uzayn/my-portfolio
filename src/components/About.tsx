@@ -102,7 +102,7 @@ export default function About() {
               <span>About</span>
             </h2>
             <p className="mt-3 text-sm text-gray-500 hidden md:block">
-              A bit more about me.
+              How I work and what I care about.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ export default function About() {
               {/* Text Content */}
               <div
                 ref={textRef}
-                className="lg:w-1/2 text-gray-600 leading-relaxed"
+                className="lg:w-[55%] text-gray-600 leading-relaxed"
               >
                 <p>
                   I&apos;m a frontend engineer who usually ends up{" "}
@@ -181,7 +181,7 @@ export default function About() {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
                       onClick={() => setExpanded(new Set())}
-                      className="mt-4 text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                      className="mt-4 inline-flex items-center rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-500 transition-colors hover:bg-gray-50 hover:text-gray-900"
                     >
                       Collapse
                     </motion.button>
@@ -190,7 +190,7 @@ export default function About() {
               </div>
 
               {/* Image */}
-              <div className="lg:w-1/2">
+              <div className="lg:w-[45%]">
                 <CardStack images={aboutImages} />
               </div>
             </div>
