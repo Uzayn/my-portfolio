@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, PanInfo } from "framer-motion";
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
-const CARD_WIDTH = 360;
-const CARD_HEIGHT = 480;
+const MAX_CARD_WIDTH = 360;
+const MIN_CARD_WIDTH = 200;
+const CARD_ASPECT = 4 / 3; // height relative to width
 const CARD_OFFSET = 40;
 const SCALE_FACTOR = 0.15;
 const SWIPE_DISTANCE = 100; // px dragged, in any direction, before the card leaves
@@ -13,32 +14,6 @@ const FLICK_MIN_DISTANCE = 30; // ...as long as it moved at least this far
 const VISIBLE_CARDS = 2;
 const BEHIND_ROTATION = -10;
 const BEHIND_X_OFFSET = 30;
-
-const wrapperStyle: React.CSSProperties = {
-  position: "relative",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "fit",
-};
-
-const cardWrapStyle: React.CSSProperties = {
-  position: "relative",
-  width: CARD_WIDTH + BEHIND_X_OFFSET,
-  height: CARD_HEIGHT,
-  listStyle: "none",
-  margin: 0,
-  padding: 0,
-};
-
-const cardStyle: React.CSSProperties = {
-  position: "absolute",
-  width: CARD_WIDTH,
-  height: CARD_HEIGHT,
-  borderRadius: 20,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
 
 interface Vector {
   x: number;
@@ -49,10 +24,12 @@ interface CardProps {
   url: string;
   index: number;
   total: number;
+  width: number;
+  height: number;
   onSwipedAway: () => void;
 }
 
-function Card({ url, index, total, onSwipedAway }: CardProps) {
+function Card({ url, index, total, width, height, onSwipedAway }: CardProps) {
   const isTop = index === 0;
   const isLast = total > 1 && index === total - 1;
   const hidden = index >= VISIBLE_CARDS;
@@ -89,7 +66,12 @@ function Card({ url, index, total, onSwipedAway }: CardProps) {
   return (
     <motion.li
       style={{
-        ...cardStyle,
+        position: "absolute",
+        width,
+        height,
+        borderRadius: 20,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
         backgroundImage: `url(${url})`,
         cursor: isTop ? "grab" : "auto",
         x,
@@ -126,19 +108,59 @@ interface CardStackProps {
 
 export default function CardStack({ images }: CardStackProps) {
   const [cards, setCards] = useState(images);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [cardWidth, setCardWidth] = useState(MAX_CARD_WIDTH);
+
+  // Fit the deck to its column so it never overflows a narrow screen.
+  useLayoutEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const fit = () =>
+      setCardWidth(
+        Math.max(
+          MIN_CARD_WIDTH,
+          Math.min(MAX_CARD_WIDTH, Math.floor(el.clientWidth - BEHIND_X_OFFSET))
+        )
+      );
+    fit();
+    const observer = new ResizeObserver(fit);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const cardHeight = Math.round(cardWidth * CARD_ASPECT);
 
   // A swipe in any direction sends the top card to the back of the deck.
   const advance = () => setCards((prev) => [...prev.slice(1), prev[0]]);
 
   return (
-    <div style={wrapperStyle}>
-      <ul style={cardWrapStyle}>
+    <div
+      ref={containerRef}
+      style={{
+        position: "relative",
+        display: "flex",
+        justifyContent: "center",
+        width: "100%",
+      }}
+    >
+      <ul
+        style={{
+          position: "relative",
+          width: cardWidth + BEHIND_X_OFFSET,
+          height: cardHeight,
+          listStyle: "none",
+          margin: 0,
+          padding: 0,
+        }}
+      >
         {cards.map((url, index) => (
           <Card
             key={url}
             url={url}
             index={index}
             total={cards.length}
+            width={cardWidth}
+            height={cardHeight}
             onSwipedAway={advance}
           />
         ))}
