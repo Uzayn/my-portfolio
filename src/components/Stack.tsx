@@ -101,23 +101,25 @@ function TechGroup({
   technologies: Technology[];
 }) {
   return (
-    <div className="relative border border-gray-200 rounded-lg p-4 pt-6">
+    <div className="relative rounded-lg border border-gray-200 p-4 pt-6">
       <span className="absolute -top-2.5 left-3 bg-white px-2 text-xs text-gray-500">
         {label}
       </span>
-      <div className="flex flex-wrap gap-4">
+      <div className="grid grid-cols-4 gap-x-2 gap-y-5 sm:grid-cols-6 md:grid-cols-7">
         {technologies.map((tech, index) => {
           const Icon = tech.icon;
           return (
-            <div key={index} className="flex flex-col items-center gap-1.5">
+            <div key={index} className="group flex flex-col items-center gap-1.5">
               <div className="size-7 md:size-8">
                 <Icon
-                  className={`w-full h-full ${tech.color} ${
-                    tech.shine ? "animate-shine" : ""
+                  className={`h-full w-full transition-all duration-300 ${tech.color} ${
+                    tech.shine
+                      ? "animate-shine"
+                      : "opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0"
                   }`}
                 />
               </div>
-              <span className="text-xs text-gray-500 text-center">
+              <span className="text-center text-xs text-gray-500 transition-colors group-hover:text-gray-900">
                 {tech.name}
               </span>
             </div>
@@ -127,7 +129,6 @@ function TechGroup({
     </div>
   );
 }
-
 export default function Stack() {
   return (
     <section id="stack" className="py-12 md:py-16 lg:py-20">
