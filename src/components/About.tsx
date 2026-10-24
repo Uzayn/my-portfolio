@@ -7,13 +7,15 @@ import CardStack from "./CardStack";
 
 interface ExpandableProps {
   trigger: string;
-  detail: string;
+  detail: string; // Rendered as a parenthetical right after the trigger
   isOpen: boolean;
   onToggle: () => void;
   shouldPulse?: boolean;
   pulseDelay?: number;
 }
 
+// An inline trigger (not a <button>) so the phrase wraps mid-sentence like
+// ordinary text instead of jumping to its own line as a block.
 function Expandable({
   trigger,
   detail,
@@ -23,30 +25,30 @@ function Expandable({
   pulseDelay = 0,
 }: ExpandableProps) {
   return (
-    <span className="inline">
-      <motion.button
+    <>
+      <motion.span
+        role="button"
+        tabIndex={0}
+        aria-expanded={isOpen}
         onClick={onToggle}
-        className="text-gray-900 underline decoration-dotted underline-offset-4 hover:decoration-solid cursor-pointer"
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            onToggle();
+          }
+        }}
+        className="cursor-pointer text-gray-900 underline decoration-dotted underline-offset-4 hover:decoration-solid focus:outline-none focus-visible:decoration-solid"
         animate={
-          shouldPulse
-            ? {
-                scale: [1, 1.05, 1],
-                color: ["#111827", "#3b82f6", "#111827"],
-              }
-            : {}
+          shouldPulse ? { color: ["#111827", "#3b82f6", "#111827"] } : {}
         }
         transition={
           shouldPulse
-            ? {
-                duration: 0.6,
-                delay: pulseDelay,
-                ease: "easeInOut",
-              }
+            ? { duration: 0.6, delay: pulseDelay, ease: "easeInOut" }
             : {}
         }
       >
         {trigger}
-      </motion.button>
+      </motion.span>
       <AnimatePresence>
         {isOpen && (
           <motion.span
@@ -56,11 +58,13 @@ function Expandable({
             transition={{ duration: 0.2 }}
             className="text-gray-600"
           >
+            {" ("}
             {detail}
+            {")"}
           </motion.span>
         )}
       </AnimatePresence>
-    </span>
+    </>
   );
 }
 
@@ -114,7 +118,7 @@ export default function About() {
                   I&apos;m a frontend engineer who usually ends up{" "}
                   <Expandable
                     trigger="owning more than the UI"
-                    detail=" - the API contract, error handling, CI, and the backend edges that fall between teams. Understanding how the whole system fits together makes the interface work better"
+                    detail="the API contract, error handling, CI, and the backend edges that fall between teams"
                     isOpen={expanded.has("ownership")}
                     onToggle={() => toggle("ownership")}
                     shouldPulse={isInView}
@@ -123,7 +127,7 @@ export default function About() {
                   . In 2026 that meant{" "}
                   <Expandable
                     trigger="building a fintech platform from scratch"
-                    detail=" - Paybanc, DW Pay's business banking product: onboarding, payouts, statements, two-factor authentication, and an operations console, delivered as the only frontend engineer"
+                    detail="Paybanc, DW Pay's business banking product: onboarding, payouts, statements, two-factor authentication, and an operations console, as the only frontend engineer"
                     isOpen={expanded.has("fintech")}
                     onToggle={() => toggle("fintech")}
                     shouldPulse={isInView}
@@ -132,7 +136,7 @@ export default function About() {
                   and{" "}
                   <Expandable
                     trigger="working across a large product monorepo"
-                    detail=" - WonderCall at Bilin: a Next.js dashboard, an Electron desktop app, and a Hono API. Document editing, a permissions system, a security and compliance review, and localization into six languages"
+                    detail="WonderCall at Bilin: document editing, a permissions system, a security and compliance review, and localization into six languages"
                     isOpen={expanded.has("monorepo")}
                     onToggle={() => toggle("monorepo")}
                     shouldPulse={isInView}
@@ -144,7 +148,7 @@ export default function About() {
                   I hold myself to{" "}
                   <Expandable
                     trigger="precision in the interface"
-                    detail=" - faithful implementation of designs, consistent spacing, and components that behave the same everywhere"
+                    detail="faithful implementation of designs, consistent spacing, components that behave the same everywhere"
                     isOpen={expanded.has("precision")}
                     onToggle={() => toggle("precision")}
                     shouldPulse={isInView}
@@ -153,7 +157,7 @@ export default function About() {
                   and to{" "}
                   <Expandable
                     trigger="the parts users never see"
-                    detail=" - clear error states, permission checks that explain themselves, rate-limited sign-in, and logs that never expose personal data"
+                    detail="clear error states, permission checks that explain themselves, rate-limited sign-in, logs that never expose personal data"
                     isOpen={expanded.has("unseen")}
                     onToggle={() => toggle("unseen")}
                     shouldPulse={isInView}
@@ -166,7 +170,7 @@ export default function About() {
                   I work with Claude Code and Codex{" "}
                   <Expandable
                     trigger="daily"
-                    detail=" - they produce much of the first draft; my time goes into deciding what to build, reviewing carefully, and verifying the result end to end"
+                    detail="they produce much of the first draft, while my time goes into deciding what to build, reviewing carefully, and verifying the result end to end"
                     isOpen={expanded.has("ai")}
                     onToggle={() => toggle("ai")}
                     shouldPulse={isInView}
@@ -175,7 +179,7 @@ export default function About() {
                   . Outside work I&apos;m building{" "}
                   <Expandable
                     trigger="Brandbreeks"
-                    detail=" with my partner - I own the frontend and most of the design decisions"
+                    detail="with my partner, owning the frontend and most of the design decisions"
                     isOpen={expanded.has("business")}
                     onToggle={() => toggle("business")}
                     shouldPulse={isInView}
