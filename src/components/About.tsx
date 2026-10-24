@@ -111,19 +111,19 @@ export default function About() {
                 className="lg:w-1/2 text-gray-600 leading-relaxed"
               >
                 <p>
-                  I&apos;m a frontend engineer who tends to end up{" "}
+                  I&apos;m a frontend engineer who usually ends up{" "}
                   <Expandable
-                    trigger="owning more than the frontend"
-                    detail=" - the API contract, the CI pipeline, the error handling, the corners of the backend nobody else got to. I've spent enough time on the other side of the API to know how things should connect, and it makes the UI work sharper"
+                    trigger="owning more than the UI"
+                    detail=" - the API contract, error handling, CI, and the backend edges that fall between teams. Understanding how the whole system fits together makes the interface work better"
                     isOpen={expanded.has("ownership")}
                     onToggle={() => toggle("ownership")}
                     shouldPulse={isInView}
                     pulseDelay={0.3}
                   />
-                  . This year that meant{" "}
+                  . In 2026 that meant{" "}
                   <Expandable
-                    trigger="taking a fintech app from an empty repo to production"
-                    detail=" - Paybanc, DW Pay's business banking platform. Onboarding, payouts, statements, two-factor auth, an ops console for the team. I was the only frontend engineer, so everything from the folder structure to the design tokens was my call"
+                    trigger="building a fintech platform from scratch"
+                    detail=" - Paybanc, DW Pay's business banking product: onboarding, payouts, statements, two-factor authentication, and an operations console, delivered as the only frontend engineer"
                     isOpen={expanded.has("fintech")}
                     onToggle={() => toggle("fintech")}
                     shouldPulse={isInView}
@@ -131,8 +131,8 @@ export default function About() {
                   />{" "}
                   and{" "}
                   <Expandable
-                    trigger="shipping across a twenty-app monorepo"
-                    detail=" - WonderCall at Bilin. A Next.js dashboard, an Electron desktop app, a Hono API. 1,500+ commits in 2026: document editing, a permissions system, a security push, and the whole product in six languages"
+                    trigger="working across a large product monorepo"
+                    detail=" - WonderCall at Bilin: a Next.js dashboard, an Electron desktop app, and a Hono API. Document editing, a permissions system, a security and compliance review, and localization into six languages"
                     isOpen={expanded.has("monorepo")}
                     onToggle={() => toggle("monorepo")}
                     shouldPulse={isInView}
@@ -141,112 +141,51 @@ export default function About() {
                   .
                 </p>
                 <p className="mt-4">
-                  Hand me a Figma file and I&apos;ll{" "}
+                  I hold myself to{" "}
                   <Expandable
-                    trigger="match it to the pixel"
-                    detail=" - genuinely the part I enjoy most. Turning a static design into something that moves and responds and feels real"
-                    isOpen={expanded.has("crafting")}
-                    onToggle={() => toggle("crafting")}
+                    trigger="precision in the interface"
+                    detail=" - faithful implementation of designs, consistent spacing, and components that behave the same everywhere"
+                    isOpen={expanded.has("precision")}
+                    onToggle={() => toggle("precision")}
                     shouldPulse={isInView}
                     pulseDelay={0.9}
-                  />
-                  . Spacing being off by 2px{" "}
+                  />{" "}
+                  and to{" "}
                   <Expandable
-                    trigger="still bothers me"
-                    detail=" - misaligned elements, inconsistent padding, a button that doesn't sit right. I can't unsee it"
-                    isOpen={expanded.has("design")}
-                    onToggle={() => toggle("design")}
-                    shouldPulse={isInView}
-                    pulseDelay={1.1}
-                  />
-                  . But I&apos;ve learned to care just as much about{" "}
-                  <Expandable
-                    trigger="the parts nobody sees"
-                    detail=" - error states that say something useful, permission gates that explain why, a login that throttles brute force, logs that don't leak a phone number. Trust gets built in those corners"
+                    trigger="the parts users never see"
+                    detail=" - clear error states, permission checks that explain themselves, rate-limited sign-in, and logs that never expose personal data"
                     isOpen={expanded.has("unseen")}
                     onToggle={() => toggle("unseen")}
                     shouldPulse={isInView}
-                    pulseDelay={1.3}
+                    pulseDelay={1.1}
                   />
-                  .
+                  . What matters most to me is whether a product earns trust
+                  in its first few seconds of use.
                 </p>
                 <p className="mt-4">
-                  I use Claude Code and Codex{" "}
+                  I work with Claude Code and Codex{" "}
                   <Expandable
-                    trigger="every day"
-                    detail=" - they write a lot of my first drafts now. My job has shifted toward deciding what to build, reviewing hard, and proving it works end to end"
+                    trigger="daily"
+                    detail=" - they produce much of the first draft; my time goes into deciding what to build, reviewing carefully, and verifying the result end to end"
                     isOpen={expanded.has("ai")}
                     onToggle={() => toggle("ai")}
                     shouldPulse={isInView}
-                    pulseDelay={1.5}
+                    pulseDelay={1.3}
                   />
                   . Outside work I&apos;m building{" "}
                   <Expandable
                     trigger="Brandbreeks"
-                    detail=" with my partner - I own the frontend and most of the design decisions. Research, intuition, and a lot of iteration"
+                    detail=" with my partner - I own the frontend and most of the design decisions"
                     isOpen={expanded.has("business")}
                     onToggle={() => toggle("business")}
                     shouldPulse={isInView}
-                    pulseDelay={1.7}
-                  />
-                  . What I care about most is still{" "}
-                  <Expandable
-                    trigger="how it feels to use something"
-                    detail=" - that split second where a user either trusts your product or bounces. I want to be on the right side of that moment"
-                    isOpen={expanded.has("emotions")}
-                    onToggle={() => toggle("emotions")}
-                    shouldPulse={isInView}
-                    pulseDelay={1.9}
+                    pulseDelay={1.5}
                   />
                   .
                 </p>
                 <p className="mt-4">
-                  Off the clock:{" "}
-                  <Expandable
-                    trigger="FPL manager since 2019"
-                    detail=" - ask me about my team."
-                    isOpen={expanded.has("fpl")}
-                    onToggle={() => toggle("fpl")}
-                    shouldPulse={isInView}
-                    pulseDelay={2.1}
-                  />
-                  ,{" "}
-                  <Expandable
-                    trigger="English football"
-                    detail=" - GGMU, the highs and lows, the passion"
-                    isOpen={expanded.has("football")}
-                    onToggle={() => toggle("football")}
-                    shouldPulse={isInView}
-                    pulseDelay={2.3}
-                  />
-                  ,{" "}
-                  <Expandable
-                    trigger="tennis and chess"
-                    detail=" - never studied chess theory, I just move pieces and calculate as i progress, i think it's more interesting this way"
-                    isOpen={expanded.has("tennis")}
-                    onToggle={() => toggle("tennis")}
-                    shouldPulse={isInView}
-                    pulseDelay={2.5}
-                  />
-                  ,{" "}
-                  <Expandable
-                    trigger="scrabble"
-                    detail=" -finding a 7-letter word on a triple is peak dopamine"
-                    isOpen={expanded.has("scrabble")}
-                    onToggle={() => toggle("scrabble")}
-                    shouldPulse={isInView}
-                    pulseDelay={2.7}
-                  />
-                  , and{" "}
-                  <Expandable
-                    trigger="2010s afrobeats"
-                    detail=" -Wizkid, Wande Coal, the golden era. If you know, you know"
-                    isOpen={expanded.has("music")}
-                    onToggle={() => toggle("music")}
-                    shouldPulse={isInView}
-                    pulseDelay={2.9}
-                  />
-                  .
+                  Off the clock: Fantasy Premier League since 2019, Manchester
+                  United, tennis, chess, and scrabble.
                 </p>
                 <AnimatePresence>
                   {expanded.size > 0 && (
