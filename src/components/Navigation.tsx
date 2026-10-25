@@ -8,7 +8,6 @@ import {
   FaFolderOpen,
   FaLayerGroup,
   FaUser,
-  FaEnvelope,
 } from "react-icons/fa6";
 
 interface NavItem {
@@ -42,11 +41,6 @@ const navItems: NavItem[] = [
     id: "about",
     icon: <FaUser size={20} />,
     label: "About",
-  },
-  {
-    id: "contact",
-    icon: <FaEnvelope size={20} />,
-    label: "Contact",
   },
 ];
 
