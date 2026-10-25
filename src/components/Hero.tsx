@@ -18,12 +18,11 @@ export default function Hero() {
             backgroundClip: "text",
           }}
         >
-          I build. Here&apos;s the work.
+          Huzain Koleosho
         </h1>
 
         <p className="text-base md:text-2xl font-light text-gray-600">
-          - Huzain Koleosho,{" "}
-          <span className="font-extralight">Frontend engineer</span>
+          Frontend engineer
         </p>
 
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0" />
