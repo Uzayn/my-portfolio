@@ -8,17 +8,12 @@ const MIN_CARD_WIDTH = 200;
 const CARD_ASPECT = 4 / 3; // height relative to width
 const CARD_OFFSET = 40;
 const SCALE_FACTOR = 0.15;
-const SWIPE_DISTANCE = 100; // px dragged, in any direction, before the card leaves
+const SWIPE_DISTANCE = 100; // px dragged left or right before the card leaves
 const FLICK_VELOCITY = 500; // px/s: a quick flick also counts...
 const FLICK_MIN_DISTANCE = 30; // ...as long as it moved at least this far
 const VISIBLE_CARDS = 2;
 const BEHIND_ROTATION = -10;
 const BEHIND_X_OFFSET = 30;
-
-interface Vector {
-  x: number;
-  y: number;
-}
 
 interface CardProps {
   url: string;
@@ -34,32 +29,30 @@ function Card({ url, index, total, width, height, onSwipedAway }: CardProps) {
   const isLast = total > 1 && index === total - 1;
   const hidden = index >= VISIBLE_CARDS;
 
-  // Every card owns its motion values, so a card that becomes the top card
+  // Every card owns its motion value, so a card that becomes the top card
   // always starts from a clean drag state.
   const x = useMotionValue(0);
-  const y = useMotionValue(0);
   const dragRotate = useTransform(x, [-200, 200], [-15, 15]);
-  const [flyTarget, setFlyTarget] = useState<Vector | null>(null);
+  // Where the card flies to once released, or null while it is in the deck.
+  const [flyX, setFlyX] = useState<number | null>(null);
+  const flying = flyX !== null;
 
+  // Drag is locked to the x axis, so vertical touches scroll the page.
   const handleDragEnd = (
     _e: MouseEvent | TouchEvent | PointerEvent,
     { offset, velocity }: PanInfo
   ) => {
-    const distance = Math.hypot(offset.x, offset.y);
-    const speed = Math.hypot(velocity.x, velocity.y);
-    const flicked = speed > FLICK_VELOCITY && distance > FLICK_MIN_DISTANCE;
+    const distance = Math.abs(offset.x);
+    const flicked =
+      Math.abs(velocity.x) > FLICK_VELOCITY && distance > FLICK_MIN_DISTANCE;
     if (distance < SWIPE_DISTANCE && !flicked) return; // dragSnapToOrigin pulls it back
 
-    // Keep flying in the direction it was dragged, far enough to clear any screen.
-    const reach = Math.max(window.innerWidth, window.innerHeight) * 1.5;
-    setFlyTarget({
-      x: (offset.x / distance) * reach,
-      y: (offset.y / distance) * reach,
-    });
+    // Keep flying the way it was dragged, far enough to clear any screen.
+    setFlyX(Math.sign(offset.x) * window.innerWidth * 1.5);
   };
 
   const handleFlightComplete = () => {
-    setFlyTarget(null);
+    setFlyX(null);
     onSwipedAway();
   };
 
@@ -75,7 +68,6 @@ function Card({ url, index, total, width, height, onSwipedAway }: CardProps) {
         backgroundImage: `url(${url})`,
         cursor: isTop ? "grab" : "auto",
         x,
-        y,
         rotate: isTop ? dragRotate : BEHIND_ROTATION,
       }}
       initial={false}
@@ -83,20 +75,19 @@ function Card({ url, index, total, width, height, onSwipedAway }: CardProps) {
         top: index * -CARD_OFFSET,
         scale: 1 - index * SCALE_FACTOR,
         zIndex: total - index,
-        opacity: hidden || flyTarget ? 0 : 1,
-        x: flyTarget ? flyTarget.x : isTop ? 0 : BEHIND_X_OFFSET,
-        y: flyTarget ? flyTarget.y : 0,
+        opacity: hidden || flying ? 0 : 1,
+        x: flying ? flyX : isTop ? 0 : BEHIND_X_OFFSET,
         rotate: isTop ? 0 : BEHIND_ROTATION,
-        transition: flyTarget
+        transition: flying
           ? { duration: 0.3, ease: "easeInOut" }
           : isLast
             ? { duration: 0 } // the card just sent to the back snaps into place unseen
             : { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
       }}
-      drag={isTop && !flyTarget}
+      drag={isTop && !flying ? "x" : false}
       dragSnapToOrigin
       onDragEnd={isTop ? handleDragEnd : undefined}
-      onAnimationComplete={flyTarget ? handleFlightComplete : undefined}
+      onAnimationComplete={flying ? handleFlightComplete : undefined}
       whileDrag={{ cursor: "grabbing" }}
     />
   );
@@ -130,7 +121,7 @@ export default function CardStack({ images }: CardStackProps) {
 
   const cardHeight = Math.round(cardWidth * CARD_ASPECT);
 
-  // A swipe in any direction sends the top card to the back of the deck.
+  // A swipe left or right sends the top card to the back of the deck.
   const advance = () => setCards((prev) => [...prev.slice(1), prev[0]]);
 
   return (

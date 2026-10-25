@@ -4,7 +4,10 @@ import { FaEnvelope } from "react-icons/fa6";
 
 export default function Hero() {
   return (
-    <section id="hero" className="pt-40 pb-20 md:pt-52 md:pb-28">
+    <section
+      id="hero"
+      className="flex min-h-svh items-center pt-28 pb-16 md:block md:min-h-0 md:pt-52 md:pb-28"
+    >
       <div className="max-w-5xl mx-auto px-6 md:px-12 space-y-6">
         <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter leading-none"
@@ -24,6 +27,13 @@ export default function Hero() {
         </p>
 
         <div className="w-48 h-0.5 bg-gradient-to-r from-gray-300/0 via-gray-300 to-gray-300/0" />
+
+        <p className="max-w-prose text-gray-600">
+          Web, engineering, developing, committing &amp; everything in between.
+          <br />
+          I care about creating performant web interfaces and engaging
+          experiences.
+        </p>
 
         <div className="flex flex-wrap gap-3 pt-2">
           <a
