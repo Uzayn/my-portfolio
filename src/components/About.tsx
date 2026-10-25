@@ -127,7 +127,7 @@ export default function About() {
                   . In 2026 that meant{" "}
                   <Expandable
                     trigger="building a fintech platform from scratch"
-                    detail="Paybanc, DW Pay's business banking product: onboarding, payouts, statements, two-factor authentication, and an operations console, as the only frontend engineer"
+                    detail="Paybanc, DW Pay's business banking product: onboarding, payouts, statements, and two-factor authentication, as the only frontend engineer"
                     isOpen={expanded.has("fintech")}
                     onToggle={() => toggle("fintech")}
                     shouldPulse={isInView}

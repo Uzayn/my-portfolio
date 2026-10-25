@@ -53,7 +53,6 @@ const workExperience: WorkExperience[] = [
       "Designed the frontend architecture: feature-sliced Vue 3 + TypeScript, a typed axios → zod → TanStack Query layer so the UI never sees a raw API or validation error, Pinia reserved for client state, lazy layout-based routing, and env validated at boot.",
       "Translated the Figma brand guide into Tailwind v4 CSS-first design tokens with light and dark themes, so Figma variable names map 1:1 to utilities.",
       "Shipped the security and money-movement flows: TOTP two-factor auth with enforced enrollment, transaction PIN, sandbox/production switcher, Apple Pay and Google Pay collections, Send-to-Card wizard, currency wallets, ledger and transaction statements with CSV export.",
-      "Built the Paybanc Operations Console (control.paybanc.ng) and extracted it into its own repo: business directory, KYC and compliance review, transaction and payout oversight, per-business charges and fees, revenue, audit logs, admin users, and interactive dashboard charts with unit tests.",
       "Own CI/CD for both apps: GitHub Actions staging and production pipelines with least-privilege tokens and npm supply-chain hardening (npm ci --ignore-scripts, release-age cooldown).",
     ],
   },
