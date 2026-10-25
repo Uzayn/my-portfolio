@@ -15,7 +15,7 @@ export default function Hero() {
             backgroundClip: "text",
           }}
         >
-          I build, this is proof
+          I build. Here&apos;s the work.
         </h1>
 
         <p className="text-base md:text-2xl font-light text-gray-600">
