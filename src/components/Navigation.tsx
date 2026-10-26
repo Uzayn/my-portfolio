@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHouse,
   FaBriefcase,
-  FaFolderOpen,
   FaLayerGroup,
   FaUser,
 } from "react-icons/fa6";
@@ -26,11 +25,6 @@ const navItems: NavItem[] = [
     id: "work",
     icon: <FaBriefcase size={20} />,
     label: "Work",
-  },
-  {
-    id: "projects",
-    icon: <FaFolderOpen size={20} />,
-    label: "Projects",
   },
   {
     id: "stack",
