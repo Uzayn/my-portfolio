@@ -13,7 +13,7 @@ export default function Contact() {
         <p className="text-sm text-gray-500">Want to work together?</p>
         <a
           href="mailto:koleoshohuzain@gmail.com"
-          className="mt-2 inline-block text-xl md:text-2xl text-gray-900 transition-colors hover:text-blue-600"
+          className="mt-2 inline-block text-xl md:text-2xl text-gray-900 transition-colors hover:text-blue-600 dark:hover:text-blue-400"
         >
           koleoshohuzain@gmail.com
         </a>

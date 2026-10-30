@@ -12,7 +12,8 @@ export default function Hero() {
         <h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter leading-none"
           style={{
-            background: "linear-gradient(90deg, #000000 0%, #434343 100%)",
+            background:
+              "linear-gradient(90deg, var(--hero-from) 0%, var(--hero-to) 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",

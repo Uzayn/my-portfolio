@@ -26,7 +26,7 @@ function Expandable({
 }: ExpandableProps) {
   return (
     <>
-      <motion.span
+      <span
         role="button"
         tabIndex={0}
         aria-expanded={isOpen}
@@ -37,18 +37,13 @@ function Expandable({
             onToggle();
           }
         }}
-        className="cursor-pointer text-gray-900 underline decoration-dotted underline-offset-4 hover:decoration-solid focus:outline-none focus-visible:decoration-solid"
-        animate={
-          shouldPulse ? { color: ["#111827", "#3b82f6", "#111827"] } : {}
-        }
-        transition={
-          shouldPulse
-            ? { duration: 0.6, delay: pulseDelay, ease: "easeInOut" }
-            : {}
-        }
+        className={`cursor-pointer text-gray-900 underline decoration-dotted underline-offset-4 hover:decoration-solid focus:outline-none focus-visible:decoration-solid ${
+          shouldPulse ? "link-pulse" : ""
+        }`}
+        style={{ animationDelay: `${pulseDelay}s` }}
       >
         {trigger}
-      </motion.span>
+      </span>
       <AnimatePresence>
         {isOpen && (
           <motion.span

@@ -141,7 +141,7 @@ function AccordionItem({
         aria-controls={`accordion-content-${role.company}`}
       >
         <div className="flex w-full items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 shrink-0">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 shrink-0 dark:bg-[oklch(92.8%_0.006_264.531)]">
             <Image
               src={role.logo}
               alt={`${role.company} logo`}
@@ -215,7 +215,7 @@ function AccordionItem({
                           href={collaborator.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:text-blue-800 hover:underline"
+                          className="text-blue-600 hover:text-blue-800 hover:underline dark:text-blue-400 dark:hover:text-blue-300"
                         >
                           {collaborator.name}
                         </a>
