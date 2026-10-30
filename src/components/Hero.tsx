@@ -40,7 +40,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-5 py-2.5 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
           >
             <FaEnvelope className="h-3.5 w-3.5" />
-            Email me
+            Send me an email
           </a>
         </div>
       </div>
